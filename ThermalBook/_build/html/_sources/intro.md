@@ -10,5 +10,12 @@ In more detail the student will be able to:
 - Generate and use analytical thermal analysis models
 - Generate and use numerical thermal analysis models
 
+```{toggle}
+Some hidden toggle content!
+
+![](../logo.jpg)
+```
+
+
 ```{tableofcontents}
 ```
