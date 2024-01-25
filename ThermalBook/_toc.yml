@@ -4,6 +4,13 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: Unit 1
+- file: Unit 2
+- file: Unit 3
+- file: Unit 4
+- file: Unit 5
+- file: Unit 6
+- file: Unit 7
+- file: Unit 8
+- file: Unit 9
+- file: Unit 10
