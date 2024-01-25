@@ -13,7 +13,7 @@ In more detail the student will be able to:
 ```{toggle}
 Some hidden toggle content!
 
-![](../logo.jpg)
+![](logo.jpg)
 ```
 
 
