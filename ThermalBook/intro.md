@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Spacecraft Thermal Design - Lecture Notes
 
 The student is able to generate a thermal design of a satellite using heat transfer analysis and thermal engineering techniques.
@@ -12,10 +24,22 @@ In more detail the student will be able to:
 
 ```{toggle}
 Some hidden toggle content!
-
-![](../logo.jpg)
 ```
 
+```{tip} This is an example
+of a tip directive.
+```
+
+```{admonition} CLick to see result
+:class: dropdown
+Some hidden toggle content!
+```
+<https://prime-applets.ewi.tudelft.nl/graph/AE4ASM526/show?domains>
+
+```{code-cell} ipython3
+note = "Python syntax highlighting"
+print(note)
+```
 
 ```{tableofcontents}
 ```
