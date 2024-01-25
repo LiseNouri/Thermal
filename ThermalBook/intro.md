@@ -12,8 +12,11 @@ In more detail the student will be able to:
 
 ```{toggle}
 Some hidden toggle content!
+```
 
-![](logo.jpg)
+```{admonition} CLick to see result
+:class: dropdown
+Some hidden toggle content!
 ```
 
 
