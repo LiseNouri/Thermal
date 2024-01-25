@@ -15,7 +15,7 @@ Some hidden toggle content!
 
 ![](../logo.jpg)
 ```
-<p><iframe allow="fullscreen" style="width: 100%!important;height: 500px;" src="https://prime-applets.ewi.tudelft.nl/graph/AE4ASM526/show?domains&amp;view=domains" allowfullscreen="allowfullscreen"></iframe></p>
+
 
 ```{tableofcontents}
 ```
