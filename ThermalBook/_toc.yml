@@ -6,14 +6,14 @@ root: intro
 options:
   numbered: True
 chapters:
-- file: Unit 1
+- file: Unit1
   title: Background Theory and Key Concepts
-- file: Unit 2
-- file: Unit 3
-- file: Unit 4
-- file: Unit 5
-- file: Unit 6
-- file: Unit 7
-- file: Unit 8
-- file: Unit 9
-- file: Unit 10
+- file: Unit2
+- file: Unit3
+- file: Unit4
+- file: Unit5
+- file: Unit6
+- file: Unit7
+- file: Unit8
+- file: Unit9
+- file: Unit10
