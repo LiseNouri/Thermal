@@ -1,11 +1,14 @@
-# Welcome to your Jupyter Book
+# Spacecraft Thermal Design - Lecture Notes
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+The student is able to generate a thermal design of a satellite using heat transfer analysis and thermal engineering techniques.
 
-Check out the content pages bundled with this sample book to see more.
+In more detail the student will be able to:
+- Understand the spacecraft thermal environment
+- Define the thermal subsystem and compare the different hardware options.
+- Understand the design cycle of the thermal subsystem.
+- Apply the concepts of heat transfer (radiation, conduction), heat balance and heat flows
+- Generate and use analytical thermal analysis models
+- Generate and use numerical thermal analysis models
 
 ```{tableofcontents}
 ```
