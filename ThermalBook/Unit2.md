@@ -1,4 +1,4 @@
-### Spacecraft Thermal Environment
+# Spacecraft Thermal Environment
 
 Spacecraft encounter a number of environments during their lifetime. In space the spacecraft is under the influence of: Deep space, Solar radiation, Albedo and Planetary infrared radiation
 
