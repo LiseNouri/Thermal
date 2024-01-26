@@ -43,4 +43,5 @@ What is the temperature of the Cube? You can assume that the body is isothermal.
 
 ```{toggle} Click to see the solution
 :show:
+$Q_{in}=Q_{solar}+Q_{albedo}$ 
 ```
