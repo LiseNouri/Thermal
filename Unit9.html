@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Spacecraft Thermal Environment &#8212; Spacecraft Thermal Design Lecture Notes</title>
+    <title>3. Thermal Modelling &#8212; Spacecraft Thermal Design Lecture Notes</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Unit2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unit9';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Thermal Modelling" href="Unit9.html" />
-    <link rel="prev" title="1. Background Theory and Key Concepts" href="Unit1.html" />
+    <link rel="next" title="4. Exercises" href="Exercise.html" />
+    <link rel="prev" title="2. Spacecraft Thermal Environment" href="Unit2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,8 +172,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Spacecraft Thermal Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Thermal Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit2.html">2. Spacecraft Thermal Environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Thermal Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Exercise.html">4. Exercises</a></li>
 </ul>
 
@@ -246,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUnit2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUnit9.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Unit2.md" target="_blank"
+      <li><a href="_sources/Unit9.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spacecraft Thermal Environment</h1>
+    <h1>Thermal Modelling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,8 +370,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-space">2.1. Deep Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-radiation">2.2. Solar Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. Thermal Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">3.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">3.3. Lumped finite-difference</a></li>
 </ul>
             </nav>
         </div>
@@ -383,22 +384,56 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="spacecraft-thermal-environment">
-<h1><span class="section-number">2. </span>Spacecraft Thermal Environment<a class="headerlink" href="#spacecraft-thermal-environment" title="Permalink to this heading">#</a></h1>
-<p>Spacecraft encounter a number of environments during their lifetime. In space the spacecraft is under the influence of: Deep space, Solar radiation, Albedo and Planetary infrared radiation</p>
-<section id="deep-space">
-<h2><span class="section-number">2.1. </span>Deep Space<a class="headerlink" href="#deep-space" title="Permalink to this heading">#</a></h2>
-<p>Deep space is the cold darkness <a class="footnote-reference brackets" href="#label1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> that surrounds the spacecraft. Due to cosmic background radiation, the temperature of deep space is 2.7K. For most engineering purposes this is set at 3K. (ref. ECSS)
-Taking into account the background radiation is significant for certain applications, such as cryogenic radiators and sensors. However for other application, it can also be neglected, e.g. the thermal balance of a rocket nozzle.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="thermal-modelling">
+<h1><span class="section-number">3. </span>Thermal Modelling<a class="headerlink" href="#thermal-modelling" title="Permalink to this heading">#</a></h1>
+<p>Learning Objectives:</p>
+<ul class="simple">
+<li><p>Understand GMM and TMM</p></li>
+<li><p>Understand raytracing to determine radiative heat exchange and its limitations</p></li>
+<li><p>Understand the differences between Lumped finite-difference method vs. Finite element methods</p></li>
+</ul>
+<section id="id1">
+<h2><span class="section-number">3.1. </span>Thermal Modelling<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Thermal modelling is a mathematical representation of a physical system. In terms of space, time, and parameter discretization, the modelling approach can be continuous for simple analytical models, discretized in a spatial network of nodes and node couplings, or statistical as in the Monte Carlo ray-tracing method used to compute radiative exchanges.
+To begin the mathematical procedure, the first step is to establish the geometrical mathematical model (GMM).
+This model represents the system’s geometry and is essential for calculating the external thermal loads on the outer surfaces and the radiation exchange between different parts of the spacecraft. Typically, it involves a simplified representation of geometry, excluding any irrelevant details from a thermal perspective. Even if this can be estimated analytically, Monte Carlo ray-tracing is the standard industry solution.
+After establishing a fundamental geometry for thermal analysis, this geometry is divided into a network of nodes.
+In order to accomplish this, the fundamental geometric shapes that comprise the geometrical mathematical model are interconnected.
+Every node represents an isothermal component that is defined by its temperature Ti and its thermal capacitance Ci.
+The numerical method used in this case is referred to as the ‘lumped parameter network’. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes. The energy equation of each node can be written as:</p>
+<p>Applying this equation to all the individual nodes of the spacecraft results in a system of ordinary differential equations.
+Solving this system allows us to determine the temperature of each specific point.
+In order to determine the temperature of the satellite, it is necessary to have both the conductive and radiative thermal couplings matrices, as well as the external loads and dissipation thermal loads vectors, as stated in the equation.
+The matrices and vectors serve as a mathematical depiction of the spacecraft’s thermal model. This model consists of concentrated thermal capacitance nodes connected by a network of thermal conductors, primarily radiative and conductive in nature. Hence, this collection of numbers is referred to as the thermal mathematical model (TMM).
+Here, iterative finite difference solvers are commonly used to calculate temperatures within the spacecraft.</p>
+<figure class="align-default" id="thermalmodelling">
+<a class="reference internal image-reference" href="_images/ThermalModelling.png"><img alt="_images/ThermalModelling.png" src="_images/ThermalModelling.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Thermal Design Cycle</span><a class="headerlink" href="#thermalmodelling" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since the thermal analysis of spacecraft in orbit is a computationally expensive task, software tools now exist to automate the process and provide feedback to the engineer to help arrive at the important analysis cases using fewer parametric runs than traditional methods.
+Some of the industry standard programs are ESARAD, TRASYS, THERMICA, SINDARadCAD (radiation exchange packages) and ESATAN, SINDA (Lumped finite-difference thermal balance packages)</p>
 </section>
-<section id="solar-radiation">
-<h2><span class="section-number">2.2. </span>Solar Radiation<a class="headerlink" href="#solar-radiation" title="Permalink to this heading">#</a></h2>
-<p>Solar <a class="reference internal" href="Unit1.html#term-Radiation"><span class="xref std std-term">radiation</span></a> is the heat coming from the sun. The solar spectrum can be approximated by a black body curve with a temperature of 5778K (ref. ECSS), the peak of this spectrum is around 500nm wavelength. Most power of this radiation is in the familiar visible spectrum.</p>
-<hr class="footnotes docutils" />
-<aside class="footnote brackets" id="label1" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>My footnote text.</p>
-</aside>
+<section id="monte-carlo-raytracing">
+<h2><span class="section-number">3.2. </span>Monte-Carlo Raytracing<a class="headerlink" href="#monte-carlo-raytracing" title="Permalink to this heading">#</a></h2>
+<p>The Monte-Carlo Raytracing method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption.
+These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
+The MCRT is therefore a stochastic method. The individual history of each ray: its emission point, emission direction and ray/face interaction, is randomly determined. This means that to obtain high fidelity there is likely to be a high computational cost.
+A potential issue of the MCRT method is that surfaces with low emissivity may take longer to find an accurate value. Another source of errors lies in the fact that the reciprocity law in the MCRT
+radiative coupling calculations: matrix line sums will not be exactly one.</p>
+<p>ESARAD (now integrated in ESATAN) takes care of the Montecarlo Raytracing. The current version has three types of accuracy each with their own advantages and disadvantages.</p>
+<ul class="simple">
+<li><p>Use a fixed number of rays per face. Total cutoff: percentage of the total energy emitted from a face that can be excluded from the results (default: 0.005)</p></li>
+<li><p>Use ray density per face</p></li>
+<li><p>Use accuracy control→ Desired accuracy of the line sums</p></li>
+</ul>
+</section>
+<section id="lumped-finite-difference">
+<h2><span class="section-number">3.3. </span>Lumped finite-difference<a class="headerlink" href="#lumped-finite-difference" title="Permalink to this heading">#</a></h2>
+<p>Numerical discretization is the process of converting partial differential equations into algebraic equations. Currently, the available methods for discretizing time differential items are limited to explicit, implicit, and Crank-Nicolson methods.
+Hence, the general discretization methods primarily address the handling of spatial differential terms. As a result, typical thermal analysts are not exposed to the process of dividing spatial differential elements into discrete units.
+Nonetheless, understanding the discretization method used in thermal analysis software is useful for understanding the configuration of certain boundary conditions, as well as the rules governing the output or mapping of analysis results.</p>
 </section>
 </section>
 
@@ -433,20 +468,20 @@ Taking into account the background radiation is significant for certain applicat
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Unit1.html"
+       href="Unit2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Background Theory and Key Concepts</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Spacecraft Thermal Environment</p>
       </div>
     </a>
     <a class="right-next"
-       href="Unit9.html"
+       href="Exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Thermal Modelling</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -466,8 +501,9 @@ Taking into account the background radiation is significant for certain applicat
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-space">2.1. Deep Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-radiation">2.2. Solar Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. Thermal Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">3.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">3.3. Lumped finite-difference</a></li>
 </ul>
   </nav></div>
 
