@@ -35,16 +35,19 @@ Typical elements of the thermal subsystem are:
 - Louvers
 - Phase change materials
 
-### Heat tranfer?
+### Heat tranfer
+
 Heat transfer deals with the transfer of the thermal energy between the environment and the space craft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:
-- Radiation:
-Heat transfer by electromagnetic radiation
-No medium is required for this heat transfer
-Most important heat transfer mechanism in space
-- 	Conduction:
-Heat transfer by molecular interaction. 
-Heat transfer through parts and contact points
-Locally important and essential
+```{glossary}
+Radiation
+  Heat transfer by electromagnetic radiation, No medium is required for this heat transfer, Most important heat transfer mechanism in space
+
+Conduction
+  Heat transfer by molecular interaction, Heat transfer through parts and contact points, Locally important and essential
+```
+
+
+
 - Convection:
 Heat transfer by gas or fluid movement
 Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight
