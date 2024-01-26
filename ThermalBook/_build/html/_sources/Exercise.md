@@ -37,11 +37,10 @@ The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel
   - 2 x 45 W
   - 2 x 150 W  
 ```
-$ Q_in=Q_solar+Q_albedo $
+$Q_{in}=Q_{solar}+Q_{albedo}$ 
 
 What is the temperature of the Cube? You can assume that the body is isothermal. This means that there are no temperature gradients within the body, because the body is considered as a single point, or a single node.
 
 ```{toggle} Click to see the solution
 :show:
-$ Q_in=Q_solar+Q_albedo $
 ```
