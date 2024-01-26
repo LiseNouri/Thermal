@@ -37,6 +37,7 @@ parse:
     # including those that are enabled by default!
     - deflist
     - amsmath
+    - dollarmath
 
 #I think this is the math command
 sphinx:

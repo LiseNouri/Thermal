@@ -372,6 +372,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. Thermal Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">3.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">3.3. Lumped finite-difference</a></li>
 </ul>
             </nav>
         </div>
@@ -383,7 +384,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="thermal-modelling">
+  <section class="tex2jax_ignore mathjax_ignore" id="thermal-modelling">
 <h1><span class="section-number">3. </span>Thermal Modelling<a class="headerlink" href="#thermal-modelling" title="Permalink to this heading">#</a></h1>
 <p>Learning Objectives:</p>
 <ul class="simple">
@@ -416,7 +417,8 @@ Some of the industry standard programs are ESARAD, TRASYS, THERMICA, SINDARadCAD
 </section>
 <section id="monte-carlo-raytracing">
 <h2><span class="section-number">3.2. </span>Monte-Carlo Raytracing<a class="headerlink" href="#monte-carlo-raytracing" title="Permalink to this heading">#</a></h2>
-<p>The Monte-Carlo Raytracing method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption. These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
+<p>The Monte-Carlo Raytracing method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption.
+These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
 The MCRT is therefore a stochastic method. The individual history of each ray: its emission point, emission direction and ray/face interaction, is randomly determined. This means that to obtain high fidelity there is likely to be a high computational cost.
 A potential issue of the MCRT method is that surfaces with low emissivity may take longer to find an accurate value. Another source of errors lies in the fact that the reciprocity law in the MCRT
 radiative coupling calculations: matrix line sums will not be exactly one.</p>
@@ -426,6 +428,12 @@ radiative coupling calculations: matrix line sums will not be exactly one.</p>
 <li><p>Use ray density per face</p></li>
 <li><p>Use accuracy control→ Desired accuracy of the line sums</p></li>
 </ul>
+</section>
+<section id="lumped-finite-difference">
+<h2><span class="section-number">3.3. </span>Lumped finite-difference<a class="headerlink" href="#lumped-finite-difference" title="Permalink to this heading">#</a></h2>
+<p>Numerical discretization is the process of converting partial differential equations into algebraic equations. Currently, the available methods for discretizing time differential items are limited to explicit, implicit, and Crank-Nicolson methods.
+Hence, the general discretization methods primarily address the handling of spatial differential terms. As a result, typical thermal analysts are not exposed to the process of dividing spatial differential elements into discrete units.
+Nonetheless, understanding the discretization method used in thermal analysis software is useful for understanding the configuration of certain boundary conditions, as well as the rules governing the output or mapping of analysis results.</p>
 </section>
 </section>
 
@@ -495,6 +503,7 @@ radiative coupling calculations: matrix line sums will not be exactly one.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. Thermal Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">3.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">3.3. Lumped finite-difference</a></li>
 </ul>
   </nav></div>
 

@@ -62,10 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Exercise';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="3. Spacecraft Thermal Environment" href="Unit9.html" />
+    <link rel="prev" title="3. Thermal Modelling" href="Unit9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit2.html">2. Spacecraft Thermal Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Spacecraft Thermal Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Thermal Modelling</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Exercises</a></li>
 </ul>
 
@@ -382,7 +384,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="exercises">
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1><span class="section-number">4. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="blackbody-earth">
 <h2><span class="section-number">4.1. </span>Blackbody Earth<a class="headerlink" href="#blackbody-earth" title="Permalink to this heading">#</a></h2>
@@ -394,8 +396,9 @@ document.write(`
 </section>
 <section id="heat-balance-in-a-cube">
 <h2><span class="section-number">4.2. </span>Heat Balance in a Cube<a class="headerlink" href="#heat-balance-in-a-cube" title="Permalink to this heading">#</a></h2>
-<p>Consider a 1 m cube, where the panel -Z  points to nadir, and the Y axis corresponds to the flight direction. The panels in ±Z and ±Y have the following optical properties: S/   = 0.15/0.75 (SSM) whereas the ±X panels have view to space and are perfectly insulated.
-The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel can be seen in the Table.</p>
+<p>Consider a 1 m cube, where the panel -Z  points to nadir, and the Y axis corresponds to the flight direction.
+The panels in ±Z and ±Y have the following optical properties: <span class="math notranslate nohighlight">\(\alpha_s /\epsilon\)</span>  = 0.15/0.75 (SSM) whereas the ±X panels have view to space and are perfectly insulated.
+The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel can be seen in the <a class="reference internal" href="#exercise2"><span class="std std-numref">Table 4.1</span></a>.</p>
 <table class="table" id="exercise2">
 <caption><span class="caption-number">Table 4.1 </span><span class="caption-text">Orbit averaged absorbed fluxes per panel (in W)</span><a class="headerlink" href="#exercise2" title="Permalink to this table">#</a></caption>
 <thead>
@@ -427,10 +430,15 @@ The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel
 </tr>
 </tbody>
 </table>
-<p>$Q_{in}=Q_{solar}+Q_{albedo}$</p>
-<p>What is the temperature of the Cube? You can assume that the body is isothermal. This means that there are no temperature gradients within the body, because the body is considered as a single point, or a single node.</p>
-<div class="toggle toggle-shown docutils container">
-<p>$Q_{in}=Q_{solar}+Q_{albedo}$</p>
+<p><strong>What is the temperature of the Cube?</strong>
+You can assume that the body is isothermal.
+This means that there are no temperature gradients within the body, because the body is considered as a single point, or a single node.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Click to see the solution</p>
+<p><span class="math notranslate nohighlight">\(Q_{in}=Q_{solar}+Q_{albedo}+Q_{earthshine}+Q_{disipation}=987 W \)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{out}=A_{zy}\cdot \epsilon \cdot\sigma\cdot T^4\)</span></p>
+<p>Solving for T:</p>
+<p><span class="math notranslate nohighlight">\(T=276K=3^{\circ} \)</span></p>
 </div>
 </section>
 </section>
@@ -471,7 +479,7 @@ The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Spacecraft Thermal Environment</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Thermal Modelling</p>
       </div>
     </a>
 </div>

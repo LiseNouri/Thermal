@@ -31,7 +31,8 @@ Since the thermal analysis of spacecraft in orbit is a computationally expensive
 Some of the industry standard programs are ESARAD, TRASYS, THERMICA, SINDARadCAD (radiation exchange packages) and ESATAN, SINDA (Lumped finite-difference thermal balance packages)
 
 ## Monte-Carlo Raytracing 
-The Monte-Carlo Raytracing method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption. These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
+The Monte-Carlo Raytracing method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption. 
+These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
 The MCRT is therefore a stochastic method. The individual history of each ray: its emission point, emission direction and ray/face interaction, is randomly determined. This means that to obtain high fidelity there is likely to be a high computational cost. 
 A potential issue of the MCRT method is that surfaces with low emissivity may take longer to find an accurate value. Another source of errors lies in the fact that the reciprocity law in the MCRT
 radiative coupling calculations: matrix line sums will not be exactly one. 
@@ -41,3 +42,8 @@ ESARAD (now integrated in ESATAN) takes care of the Montecarlo Raytracing. The c
 - Use ray density per face
 - Use accuracy control→ Desired accuracy of the line sums
  
+ ## Lumped finite-difference
+ 
+ Numerical discretization is the process of converting partial differential equations into algebraic equations. Currently, the available methods for discretizing time differential items are limited to explicit, implicit, and Crank-Nicolson methods. 
+ Hence, the general discretization methods primarily address the handling of spatial differential terms. As a result, typical thermal analysts are not exposed to the process of dividing spatial differential elements into discrete units. 
+ Nonetheless, understanding the discretization method used in thermal analysis software is useful for understanding the configuration of certain boundary conditions, as well as the rules governing the output or mapping of analysis results.
