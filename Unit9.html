@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Thermal Modelling &#8212; Spacecraft Thermal Design Lecture Notes</title>
+    <title>3. Thermal Modelling &#8212; Spacecraft Thermal Design</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Unit9';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -157,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    <p class="title logo__title">Spacecraft Thermal Design Lecture Notes</p>
+    <p class="title logo__title">Spacecraft Thermal Design</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -170,13 +172,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Name of Numbered Part 1</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit2.html">2. Spacecraft Thermal Environment</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Thermal Modelling</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Name of Not-numbered Part 2</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Exercise.html">Exercises</a></li>
 </ul>
@@ -404,7 +406,10 @@ This model represents the system’s geometry and is essential for calculating t
 After establishing a fundamental geometry for thermal analysis, this geometry is divided into a network of nodes.
 In order to accomplish this, the fundamental geometric shapes that comprise the geometrical mathematical model are interconnected.
 Every node represents an isothermal component that is defined by its temperature Ti and its thermal capacitance Ci.
-The numerical method used in this case is referred to as the ‘lumped parameter network’. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes. The energy equation of each node can be written as:</p>
+The numerical method used in this case is referred to as the ‘lumped parameter network’. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes.
+The energy equation of each node can be written as:</p>
+<div class="math notranslate nohighlight">
+\[C_{i} (dT_i)/dt=Q_(i )+∑_(j=1)^n〖K_ij (T_(j )-T_i ) 〗+∑_(j=1)^n▒〖R_ij (T_(j )^4-T_i^4 ) 〗\]</div>
 <p>Applying this equation to all the individual nodes of the spacecraft results in a system of ordinary differential equations.
 Solving this system allows us to determine the temperature of each specific point.
 In order to determine the temperature of the satellite, it is necessary to have both the conductive and radiative thermal couplings matrices, as well as the external loads and dissipation thermal loads vectors, as stated in the equation.
@@ -522,7 +527,7 @@ Nonetheless, understanding the discretization method used in thermal analysis so
   <div class="footer-item">
     
 <p class="component-author">
-By IUB
+By IUB and NP
 </p>
 
   </div>
