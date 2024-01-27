@@ -61,12 +61,21 @@ Assess view factor between solar panel rear side and S/C side wall and space.
 Consider first that the solar panel size is 100 x 200 mm and S/C side wall is 100 x 300 mm. 
 Repeat for S/C side wall 100 x 50 mm. 
 
+```{admonition} Click to see the solution
+:class: dropdown, tip
+The solution goes here
+```
+
 ## Two Infinite Plates
 
 ```{figure} images/InfinitePlates.png
 :height: 500px
 :name: InfinitePlates
 Heat flows of two infinite plates
+```
+```{admonition} Click to see the solution
+:class: dropdown, tip
+The solution goes here
 ```
 
 ## SPEXone Polarimeter
@@ -88,3 +97,8 @@ Some characteristics of the instrument are:
 * Environment: 45 W on radiator
 
 Considering that the instrument has an operational temperature of 25 degrees, is this a good thermal design? How would you improve it?
+
+```{admonition} Click to see the solution
+:class: dropdown, tip
+The solution goes here
+```

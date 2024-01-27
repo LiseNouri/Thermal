@@ -12,7 +12,10 @@ This model represents the system's geometry and is essential for calculating the
 After establishing a fundamental geometry for thermal analysis, this geometry is divided into a network of nodes. 
 In order to accomplish this, the fundamental geometric shapes that comprise the geometrical mathematical model are interconnected. 
 Every node represents an isothermal component that is defined by its temperature Ti and its thermal capacitance Ci. 
-The numerical method used in this case is referred to as the 'lumped parameter network'. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes. The energy equation of each node can be written as: 
+The numerical method used in this case is referred to as the 'lumped parameter network'. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes. 
+The energy equation of each node can be written as: 
+
+$$C_{i} (dT_i)/dt=Q_(i )+∑_(j=1)^n〖K_ij (T_(j )-T_i ) 〗+∑_(j=1)^n▒〖R_ij (T_(j )^4-T_i^4 ) 〗$$
 
 
 Applying this equation to all the individual nodes of the spacecraft results in a system of ordinary differential equations. 

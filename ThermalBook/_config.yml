@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Spacecraft Thermal Design Lecture Notes
-author: IUB
+title: Spacecraft Thermal Design 
+author: IUB and NP
 # logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -39,7 +39,4 @@ parse:
     - amsmath
     - dollarmath
 
-#I think this is the math command
-sphinx:
-  config:
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
