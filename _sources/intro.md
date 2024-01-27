@@ -10,9 +10,8 @@ kernelspec:
   name: python3
 ---
 
-# AE4ASM526 Spacecraft Thermal Design 
+# Learning Objectives
 
-## Learning Objectives
 The student is able to generate a thermal design of a satellite using heat transfer analysis and thermal engineering techniques.
 
 In more detail the student will be able to:
