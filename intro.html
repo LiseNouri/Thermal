@@ -350,7 +350,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -366,6 +368,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -377,14 +389,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ae4asm526-spacecraft-thermal-design">
 <h1>AE4ASM526 Spacecraft Thermal Design<a class="headerlink" href="#ae4asm526-spacecraft-thermal-design" title="Permalink to this heading">#</a></h1>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>The student is able to generate a thermal design of a satellite using heat transfer analysis and thermal engineering techniques.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These are the learning objectives of the course</p>
-</div>
-</aside>
 <p>In more detail the student will be able to:</p>
 <ul class="simple">
 <li><p>Understand the spacecraft thermal environment</p></li>
@@ -394,26 +401,6 @@ document.write(`
 <li><p>Generate and use analytical thermal analysis models</p></li>
 <li><p>Generate and use numerical thermal analysis models</p></li>
 </ul>
-<p>:::{note}
-This text is <strong>standard</strong> <em>Markdown</em>
-:::</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;Python syntax highlighting&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python syntax highlighting
-</pre></div>
-</div>
-</div>
-</div>
-<blockquote class="epigraph">
-<div><p>Here is a cool quotation.</p>
-<p class="attribution">—Jo the Jovyan</p>
-</div></blockquote>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul>
@@ -428,6 +415,7 @@ This text is <strong>standard</strong> <em>Markdown</em>
 <li class="toctree-l1"><a class="reference internal" href="Exercise.html">Exercises</a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -476,7 +464,22 @@ This text is <strong>standard</strong> <em>Markdown</em>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
