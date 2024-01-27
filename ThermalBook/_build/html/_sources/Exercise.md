@@ -2,7 +2,8 @@
 
 ## Blackbody Earth
 
-Calculate the radiant flux in an orbit at 200 km altitude that is emitted by the earth. Assume that Earth is a black body, Black body temperature T = 252 K and Earth mean radius R = 6371 km. 
+Calculate the radiant flux in an orbit at 200 km altitude that is emitted by the earth. 
+Assume that Earth is a black body, Black body temperature T = 252 K and Earth mean radius R = 6371 km. 
 
 ```{admonition} Click to see the solution
 :class: dropdown, tip
@@ -54,3 +55,36 @@ Solving for T:
 $T=276K=3^{\circ} $ 
 ```
 
+## Radiation Exchange in a Spacecraft
+
+Assess view factor between solar panel rear side and S/C side wall and space. 
+Consider first that the solar panel size is 100 x 200 mm and S/C side wall is 100 x 300 mm. 
+Repeat for S/C side wall 100 x 50 mm. 
+
+## Two Infinite Plates
+
+```{figure} images/InfinitePlates.png
+:height: 500px
+:name: InfinitePlates
+Heat flows of two infinite plates
+```
+
+## SPEXone Polarimeter
+PACE's SPEXone instrument [^label1] is a multi-angle polarimeter that measures sunlight intensity, Degree of Linear Polarization (DoLP), and Angle of Linear Polarization (AoLP) from Earth's atmosphere, land surface, and ocean. 
+Its development aimed to achieve high accuracy in DoLP measurements, enabling accurate characterization of aerosols, which are a significant source of error in climate change quantification.
+
+The development of SPEXone is the result of a collaboration between SRON Netherlands Institute for Space Research and Airbus Netherlands, with help from experts from TNO and other dutch companies.
+
+[^label1]: [SPEXone instrument](https://pace.oceansciences.org/spexone.htm)
+
+Some characteristics of the instrument are: 
+* Heat dissipation: 12 W
+* Size: 40x30x15 $cm^3$
+* Radiator facing space: $\alpha/\epsilon$ = 0.2/0.8 (Solar White)
+* SLI towards Spacecraft, radiative link with $\alpha/\epsilon$ = 0.14 / 0.035
+* 3 Ti alloy struts: k= 7 W/m K, L =15cm, A = $2 cm^2$ per strut 
+* Connection Radiator - Instrument: Strap: 1 W/K
+* $T_{SC}$ = 270 K, assumed black body 
+* Environment: 45 W on radiator
+
+Considering that the instrument has an operational temperature of 25 degrees, is this a good thermal design? How would you improve it?

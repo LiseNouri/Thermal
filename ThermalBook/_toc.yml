@@ -3,17 +3,15 @@
 
 format: jb-book
 root: intro
-options:
-  numbered: True
-chapters:
-- file: Unit1
-  title: Background Theory and Key Concepts
-- file: Unit2
-- file: Unit9
-- file: Exercise
-#- file: Unit5
-#- file: Unit6
-#- file: Unit7
-#- file: Unit8
-#- file: Unit9
-#- file: Unit10
+  
+parts:
+  - caption: Lecture Notes
+    numbered: True  # Only applies to chapters in Part 1.
+    chapters:
+    - file: Unit1
+    - file: Unit2
+    - file: Unit9    
+  - caption: Exercises
+    chapters:
+    - file: Exercise
+    title: Solved Exercises
