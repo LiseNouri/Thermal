@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>8. Thermal Verification and testing &#8212; Spacecraft Thermal Design</title>
+    <title>8. Thermal Verification and Testing &#8212; Spacecraft Thermal Design</title>
   
   
   
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    AE4ASM526 Spacecraft Thermal Design
+                    Learning Objectives
                 </a>
             </li>
         </ul>
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Unit5.html">5. Thermal Network Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit6.html">6. Transient Thermal Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit7.html">7. Thermal Modelling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Thermal Verification and testing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Thermal Verification and Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit9.html">9. Thermal Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit10.html">10. Thermal Design Cycle</a></li>
 </ul>
@@ -358,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -369,11 +371,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Thermal Verification and testing</h1>
+    <h1>Thermal Verification and Testing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">8.1. Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-balance-test">8.2. Thermal Balance Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-qualification-testing">8.3. Thermal Qualification Testing</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -384,7 +396,28 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thermal-verification-and-testing">
-<h1><span class="section-number">8. </span>Thermal Verification and testing<a class="headerlink" href="#thermal-verification-and-testing" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Thermal Verification and Testing<a class="headerlink" href="#thermal-verification-and-testing" title="Permalink to this heading">#</a></h1>
+<section id="methods">
+<h2><span class="section-number">8.1. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="thermal-balance-test">
+<h2><span class="section-number">8.2. </span>Thermal Balance Test<a class="headerlink" href="#thermal-balance-test" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="thermal-qualification-testing">
+<h2><span class="section-number">8.3. </span>Thermal Qualification Testing<a class="headerlink" href="#thermal-qualification-testing" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="cleanroom">
+<a class="reference internal image-reference" href="images/CleanRoom.png"><img alt="images/CleanRoom.png" src="images/CleanRoom.png" style="height: 500px;" /></a>
+</figure>
+<figure class="align-default" id="vaccumchamber">
+<a class="reference internal image-reference" href="images/VaccumChamber.png"><img alt="images/VaccumChamber.png" src="images/VaccumChamber.png" style="height: 500px;" /></a>
+</figure>
+<figure class="align-default" id="juicepanels">
+<a class="reference internal image-reference" href="images/JuicePanels.png"><img alt="images/JuicePanels.png" src="images/JuicePanels.png" style="height: 500px;" /></a>
+</figure>
+<figure class="align-default" id="halogenlamps">
+<a class="reference internal image-reference" href="images/HalogenLamps.png"><img alt="images/HalogenLamps.png" src="images/HalogenLamps.png" style="height: 500px;" /></a>
+</figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,7 +475,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">8.1. Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-balance-test">8.2. Thermal Balance Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-qualification-testing">8.3. Thermal Qualification Testing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
