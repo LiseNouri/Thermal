@@ -44,9 +44,8 @@ Conduction
   Heat transfer by molecular interaction, Heat transfer through parts and contact points, Locally important and essential
 
 Convection:
-Heat transfer by gas or fluid movement
-Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight
-Can be natural or forced (e.g. by a fan). Works different in space and in a gravity environment. 
+	Heat transfer by gas or fluid movement.Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight.
+	Can be natural or forced (e.g. by a fan). Works different in space and in a gravity environment. 
 ```
 
 

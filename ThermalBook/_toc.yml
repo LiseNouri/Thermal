@@ -10,7 +10,14 @@ parts:
     chapters:
     - file: Unit1
     - file: Unit2
-    - file: Unit9    
+    - file: Unit3
+    - file: Unit4
+    - file: Unit5
+    - file: Unit6
+    - file: Unit7
+    - file: Unit8
+    - file: Unit9
+    - file: Unit10
   - caption: Exercises
     chapters:
     - file: Exercise

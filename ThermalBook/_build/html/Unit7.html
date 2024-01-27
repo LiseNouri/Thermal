@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Background Theory and Key Concepts &#8212; Spacecraft Thermal Design</title>
+    <title>7. Thermal Modelling &#8212; Spacecraft Thermal Design</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Unit1';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unit7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Spacecraft Thermal Environment" href="Unit2.html" />
-    <link rel="prev" title="AE4ASM526 Spacecraft Thermal Design" href="intro.html" />
+    <link rel="next" title="8. Thermal Verification and testing" href="Unit8.html" />
+    <link rel="prev" title="6. Transient Thermal Analysis" href="Unit6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,9 +174,16 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Background Theory and Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit2.html">2. Spacecraft Thermal Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Thermal Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit3.html">3. Radiation and Heat Balance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit4.html">4. Heat Exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit5.html">5. Thermal Network Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit6.html">6. Transient Thermal Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Thermal Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit8.html">8. Thermal Verification and testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit9.html">9. Thermal Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit10.html">10. Thermal Design Cycle</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -250,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUnit1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUnit7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Unit1.md" target="_blank"
+      <li><a href="_sources/Unit7.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Background Theory and Key Concepts</h1>
+    <h1>Thermal Modelling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,9 +383,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">1.1. Key Concepts:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-spacecraft-thermal-control">1.1.1. Why spacecraft thermal control?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-tranfer">1.1.2. Heat tranfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. Thermal Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">7.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">7.3. Lumped finite-difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-finite-elements-method-in-thermal-analysis">7.3.1. Use of Finite Elements Method in thermal analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -390,65 +400,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="background-theory-and-key-concepts">
-<h1><span class="section-number">1. </span>Background Theory and Key Concepts<a class="headerlink" href="#background-theory-and-key-concepts" title="Permalink to this heading">#</a></h1>
-<section id="key-concepts">
-<h2><span class="section-number">1.1. </span>Key Concepts:<a class="headerlink" href="#key-concepts" title="Permalink to this heading">#</a></h2>
-<p>This part of the lectures introduces some key concepts, and introduces a global overview of the thermal subsystem. More detail will be provided in subsequent lectures.</p>
-<section id="why-spacecraft-thermal-control">
-<h3><span class="section-number">1.1.1. </span>Why spacecraft thermal control?<a class="headerlink" href="#why-spacecraft-thermal-control" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="thermal-modelling">
+<h1><span class="section-number">7. </span>Thermal Modelling<a class="headerlink" href="#thermal-modelling" title="Permalink to this heading">#</a></h1>
+<p>Learning Objectives:</p>
 <ul class="simple">
-<li><p>Equipment is only functional in certain temperature ranges. Batteries can lose their charge if they get to cold, or explode if they overheat. The fuel in propulsion systems or the fluids in thermal systems can freeze.</p></li>
-<li><p>Control over temperature gradients is important as temperature gradients introduce deformation. For example for an optical system this can influence the measurements. This can also introduce stresses in the structure, specially at bonded interfaces.</p></li>
-<li><p>Temperature swings can cause fatigue in the materials.</p></li>
-<li><p>At the extreme ranges temperatures can cause changes in material properties, e.g. outgassing of adhesives, or brittleness at cryogenic temperatures.</p></li>
+<li><p>Understand GMM and TMM</p></li>
+<li><p>Understand raytracing to determine radiative heat exchange and its limitations</p></li>
+<li><p>Understand the differences between Lumped finite-difference method vs. Finite element methods</p></li>
 </ul>
-<p>The numbers below form some indication of a characteristic thermal control subsystem for a spacecraft. These number can very per application:</p>
+<section id="id1">
+<h2><span class="section-number">7.1. </span>Thermal Modelling<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Modelling is a mathematical representation of a physical system. In terms of space, time, and parameter discretization, the modelling approach can be continuous for simple analytical models, discretized in a spatial network of nodes and node couplings, or statistical as in the Monte Carlo ray-tracing method used to compute radiative exchanges.</p>
+<p>To begin the mathematical procedure, the first step is to establish the <strong>Geometrical Mathematical Model (GMM)</strong>.
+This model represents the system’s geometry and is essential for calculating the external thermal loads on the outer surfaces and the radiation exchange between different parts of the spacecraft.
+Typically, it involves a simplified representation of geometry, excluding any details that are not relevant from a thermal perspective.
+The GMM can be estimated analytically, but Monte Carlo Ray-Tracing (MCRT) is the standard industry solution.</p>
+<p>After establishing a fundamental geometry for thermal analysis, this geometry is divided into a network of nodes.
+In order to accomplish this, the fundamental geometric shapes that comprise the geometrical mathematical model are interconnected.
+Every node represents an isothermal component that is defined by its temperature Ti and its thermal capacitance Ci.
+The numerical method used in this case is referred to as the ‘lumped parameter network’. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes.</p>
+<p>The energy equation of each node (i) can be written as:</p>
+<div class="math notranslate nohighlight" id="equation-energyequation">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-energyequation" title="Permalink to this equation">#</a></span>\[
+C_{i} \frac{dT_i}{dt}=Q_i+∑_{j=1}^n K_{ij}\cdot (T_j-T_i )+∑_{j=1}^n R_{ij} \cdot (T_j^4-T_i^4)
+\]</div>
+<p>Applying this equation to all the individual nodes of the spacecraft results in a system of ordinary differential equations.
+Solving this system allows us to determine the temperature of each specific point.
+In order to determine the temperature of the satellite, it is necessary to have both the conductive and radiative thermal couplings matrices, as well as the external loads and dissipation thermal loads vectors, as stated in the equation.
+The matrices and vectors serve as a mathematical depiction of the spacecraft’s thermal model.
+This model consists of concentrated thermal capacitance nodes connected by a network of thermal conductors, primarily radiative and conductive in nature. Hence, this collection of numbers is referred to as the <strong>Thermal Mathematical Model (TMM)</strong>.
+Here, iterative finite difference solvers are commonly used to calculate temperatures within the spacecraft.</p>
+<figure class="align-default" id="thermalmodelling">
+<a class="reference internal image-reference" href="_images/ThermalModelling.png"><img alt="_images/ThermalModelling.png" src="_images/ThermalModelling.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">Thermal Design Cycle</span><a class="headerlink" href="#thermalmodelling" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since the thermal analysis of spacecraft in orbit is a computationally expensive task, software tools now exist to automate the process and provide feedback to the engineer to help arrive at the important analysis cases using fewer parametric runs than traditional methods.
+Some of the industry standard programs are ESARAD, TRASYS, THERMICA, SINDARadCAD (radiation exchange packages) and ESATAN, SINDA (Lumped finite-difference thermal balance packages)</p>
+</section>
+<section id="monte-carlo-raytracing">
+<h2><span class="section-number">7.2. </span>Monte-Carlo Raytracing<a class="headerlink" href="#monte-carlo-raytracing" title="Permalink to this heading">#</a></h2>
+<p>The Monte-Carlo Raytracing (MCRT) method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption.
+These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model.
+An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.
+The MCRT is therefore a stochastic method.
+The individual history of each ray: its emission point, emission direction and ray/face interaction, is randomly determined.
+This means that to obtain high fidelity there is likely to be a high computational cost.
+A potential issue of the MCRT method is that surfaces with low emissivity may take longer to find an accurate value. Another source of errors lies in the fact that the reciprocity law in the MCRT
+radiative coupling calculations: matrix line sums will not be exactly one.</p>
+<p>ESARAD (now integrated in ESATAN) takes care of the Montecarlo Raytracing.
+The current version has three types of accuracy each with their own advantages and disadvantages.</p>
 <ul class="simple">
-<li><p>Appearance: &gt; 95 % spacecraft exterior</p></li>
-<li><p>Mass: 2 - 5 % of spacecraft dry mass</p></li>
-<li><p>Cost: 3 - 5 % of spacecraft cost</p></li>
-<li><p>Power: &lt; 5 % of total spacecraft power</p></li>
-</ul>
-<p>Typical elements of the thermal subsystem are:</p>
-<ul class="simple">
-<li><p>Surface coatings and finishes</p></li>
-<li><p>Multilayer insulations and heat shield / barriers</p></li>
-<li><p>Radiators</p></li>
-<li><p>Mounting materials (struts)</p></li>
-<li><p>Interface fillers, noth insulating and conducting</p></li>
-<li><p>Passive coolers</p></li>
-<li><p>Flexible conductive links</p></li>
-<li><p>Heat pipes, both passive (contact conductance) and actively pumped.</p></li>
-<li><p>Temperature sensors</p></li>
-<li><p>Heaters and thermostats</p></li>
-<li><p>Active coolers (e.g. Peltier elements or cryostats)</p></li>
-<li><p>Louvers</p></li>
-<li><p>Phase change materials</p></li>
+<li><p>Use a fixed number of rays per face. Total cutoff: percentage of the total energy emitted from a face that can be excluded from the results (default: 0.005)</p></li>
+<li><p>Use ray density per face</p></li>
+<li><p>Use accuracy control→ Desired accuracy of the line sums</p></li>
 </ul>
 </section>
-<section id="heat-tranfer">
-<h3><span class="section-number">1.1.2. </span>Heat tranfer<a class="headerlink" href="#heat-tranfer" title="Permalink to this heading">#</a></h3>
-<p>Heat transfer deals with the transfer of the thermal energy between the environment and the space craft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:</p>
-<dl class="simple glossary">
-<dt id="term-Radiation">Radiation<a class="headerlink" href="#term-Radiation" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by electromagnetic radiation, No medium is required for this heat transfer, Most important heat transfer mechanism in space</p>
-</dd>
-<dt id="term-Conduction">Conduction<a class="headerlink" href="#term-Conduction" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by molecular interaction, Heat transfer through parts and contact points, Locally important and essential</p>
-</dd>
-<dt id="term-Convection">Convection:<a class="headerlink" href="#term-Convection" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by gas or fluid movement.Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight.
-Can be natural or forced (e.g. by a fan). Works different in space and in a gravity environment.</p>
-</dd>
-</dl>
-<p>Thermal design and analysis is involved in all phases of spacecraft design:</p>
-<ul class="simple">
-<li><p>In feasibility phases, the thermal environment is analyzed, rough thermal concepts are compared. Preliminary analysis is performed. In this phase general concept is selected, often with high level (hand) calculations.</p></li>
-<li><p>In the preliminary design phase, the preliminary thermal design is defined, and thermal models are developed. The analysis focusses on the worst cases (hot and cold). Some development tests can occur, for which analysis and correlation between test and model needs to be performed.</p></li>
-<li><p>In the detailed design phase, the final Thermal control subsystem design in analyzed. The models are updated, and all mission cases are analyzed.</p></li>
-<li><p>During the qualification the thermal models are adapted for testing. Test predictions and correlations are being made. The thermal models will be updated after these tests. Often the thermal engineer also supports AIT activities with their expertise. At the end of this phase, models and documentation needs to be archived for future use.</p></li>
-<li><p>During the utilization phase, mission predictions and flight correlations are performed.</p></li>
-</ul>
-<p>The thermal modelling process starts with the mission requirements (environment, orbit operational requirements) and an spacecraft design (geometry, thermos-optical properties, materials, operation). From this information a geometric (radiative) model and a thermal model are made. A radiative solver will calculate the radiative load and interactions in the spacecraft model. The thermal model represents the conductive couplings, heater settings, heat capacity, heater settings etc.. These two models, are combined in the main thermal mode, which is solved for temperatures, heat fluxes, heater cycles. And thermos-hydraulic parameters. The results are validated.
-For hand calculations a roughly similar process is followed. This is an iterative process, as design changes warrant changes to the model.</p>
+<section id="lumped-finite-difference">
+<h2><span class="section-number">7.3. </span>Lumped finite-difference<a class="headerlink" href="#lumped-finite-difference" title="Permalink to this heading">#</a></h2>
+<p>Numerical discretization is the process of converting partial differential equations into algebraic equations.
+Currently, the available methods for discretizing time differential items are limited to explicit, implicit, and Crank-Nicolson methods.
+Hence, the general discretization methods primarily address the handling of spatial differential terms.
+As a result, typical thermal analysts are not exposed to the process of dividing spatial differential elements into discrete units.
+Nonetheless, understanding the discretization method used in thermal analysis software is useful for understanding the configuration of certain boundary conditions, as well as the rules governing the output or mapping of analysis results.</p>
+<section id="use-of-finite-elements-method-in-thermal-analysis">
+<h3><span class="section-number">7.3.1. </span>Use of Finite Elements Method in thermal analysis<a class="headerlink" href="#use-of-finite-elements-method-in-thermal-analysis" title="Permalink to this heading">#</a></h3>
+<p>Heat transfer exhibits significant nonlinearity, particularly in radiation, and thermal analysts strive to minimize the number of thermal elements (nodes) in order to decrease computational effort and cost.
+An advantage of finite element methods is their versatility in performing both thermal and structural analysis using the same program.
+If there is a significant difference between the thermal and structural node, joint analysis of thermal and structural models in structural finite element programs is not possible due to the absence of similar constraints.
+Practically, this discrepancy will impose a burden on the structural analyst, as they will need to estimate temperatures in their structural model in order to calculate thermal distortions.
+On the flip side, a thermal analyst may dedicate a significant amount of time assessing conduction in a model that only loosely resembles an actual structure.</p>
 </section>
 </section>
 </section>
@@ -484,20 +506,20 @@ For hand calculations a roughly similar process is followed. This is an iterativ
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="Unit6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AE4ASM526 Spacecraft Thermal Design</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Transient Thermal Analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="Unit2.html"
+       href="Unit8.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Spacecraft Thermal Environment</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Thermal Verification and testing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,9 +539,10 @@ For hand calculations a roughly similar process is followed. This is an iterativ
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">1.1. Key Concepts:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-spacecraft-thermal-control">1.1.1. Why spacecraft thermal control?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-tranfer">1.1.2. Heat tranfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. Thermal Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-raytracing">7.2. Monte-Carlo Raytracing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lumped-finite-difference">7.3. Lumped finite-difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-finite-elements-method-in-thermal-analysis">7.3.1. Use of Finite Elements Method in thermal analysis</a></li>
 </ul>
 </li>
 </ul>
