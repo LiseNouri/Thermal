@@ -11,3 +11,19 @@ Taking into account the background radiation is significant for certain applicat
 ## Solar Radiation
 
 Solar {term}`radiation` is the heat coming from the sun. The solar spectrum can be approximated by a black body curve with a temperature of 5778K [^ECSS], the peak of this spectrum is around 500nm wavelength. Most power of this radiation is in the familiar visible spectrum.
+
+
+## Albedo
+
+
+## Planetary Radiation
+
+
+## Orbital effects
+
+## Internal heat sources
+
+## On-Ground environments
+
+## Ascent environment
+

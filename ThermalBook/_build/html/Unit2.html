@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Unit2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Thermal Modelling" href="Unit9.html" />
+    <link rel="next" title="3. Radiation and Heat Balance" href="Unit3.html" />
     <link rel="prev" title="1. Background Theory and Key Concepts" href="Unit1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    AE4ASM526 Spacecraft Thermal Design
+                    Learning Objectives
                 </a>
             </li>
         </ul>
@@ -174,7 +174,14 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Spacecraft Thermal Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Thermal Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit3.html">3. Radiation and Heat Balance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit4.html">4. Heat Exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit5.html">5. Thermal Network Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit6.html">6. Transient Thermal Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit7.html">7. Thermal Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit8.html">8. Thermal Verification and Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit9.html">9. Thermal Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit10.html">10. Thermal Design Cycle</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -376,6 +383,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-space">2.1. Deep Space</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-radiation">2.2. Solar Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#albedo">2.3. Albedo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planetary-radiation">2.4. Planetary Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbital-effects">2.5. Orbital effects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-heat-sources">2.6. Internal heat sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ground-environments">2.7. On-Ground environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascent-environment">2.8. Ascent environment</a></li>
 </ul>
             </nav>
         </div>
@@ -398,6 +411,24 @@ Taking into account the background radiation is significant for certain applicat
 <section id="solar-radiation">
 <h2><span class="section-number">2.2. </span>Solar Radiation<a class="headerlink" href="#solar-radiation" title="Permalink to this heading">#</a></h2>
 <p>Solar <a class="reference internal" href="Unit1.html#term-Radiation"><span class="xref std std-term">radiation</span></a> is the heat coming from the sun. The solar spectrum can be approximated by a black body curve with a temperature of 5778K <a class="footnote-reference brackets" href="#ecss" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, the peak of this spectrum is around 500nm wavelength. Most power of this radiation is in the familiar visible spectrum.</p>
+</section>
+<section id="albedo">
+<h2><span class="section-number">2.3. </span>Albedo<a class="headerlink" href="#albedo" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="planetary-radiation">
+<h2><span class="section-number">2.4. </span>Planetary Radiation<a class="headerlink" href="#planetary-radiation" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="orbital-effects">
+<h2><span class="section-number">2.5. </span>Orbital effects<a class="headerlink" href="#orbital-effects" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="internal-heat-sources">
+<h2><span class="section-number">2.6. </span>Internal heat sources<a class="headerlink" href="#internal-heat-sources" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="on-ground-environments">
+<h2><span class="section-number">2.7. </span>On-Ground environments<a class="headerlink" href="#on-ground-environments" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="ascent-environment">
+<h2><span class="section-number">2.8. </span>Ascent environment<a class="headerlink" href="#ascent-environment" title="Permalink to this heading">#</a></h2>
 <hr class="footnotes docutils" />
 <aside class="footnote brackets" id="ecss" role="note">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
@@ -447,11 +478,11 @@ Taking into account the background radiation is significant for certain applicat
       </div>
     </a>
     <a class="right-next"
-       href="Unit9.html"
+       href="Unit3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Thermal Modelling</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Radiation and Heat Balance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -473,6 +504,12 @@ Taking into account the background radiation is significant for certain applicat
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-space">2.1. Deep Space</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-radiation">2.2. Solar Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#albedo">2.3. Albedo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planetary-radiation">2.4. Planetary Radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbital-effects">2.5. Orbital effects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-heat-sources">2.6. Internal heat sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-ground-environments">2.7. On-Ground environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascent-environment">2.8. Ascent environment</a></li>
 </ul>
   </nav></div>
 

@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    AE4ASM526 Spacecraft Thermal Design
+                    Learning Objectives
                 </a>
             </li>
         </ul>
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Thermal Network Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit6.html">6. Transient Thermal Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit7.html">7. Thermal Modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Unit8.html">8. Thermal Verification and testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Unit8.html">8. Thermal Verification and Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit9.html">9. Thermal Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit10.html">10. Thermal Design Cycle</a></li>
 </ul>
@@ -358,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -374,6 +376,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-equivalents">5.1. Thermal equivalents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-of-network-reduction">5.2. Steps of network reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-and-series-couplings">5.3. Parallel and series couplings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starpoint-elimination">5.4. Starpoint elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearization-to-the-thermal-potential">5.5. Linearization to the thermal potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-between-potential-and-power-sources">5.6. Conversion between potential and power sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-temperatures">5.7. Sink temperatures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-optical-properties">5.8. Effective optical properties</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -385,6 +402,30 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thermal-network-analysis">
 <h1><span class="section-number">5. </span>Thermal Network Analysis<a class="headerlink" href="#thermal-network-analysis" title="Permalink to this heading">#</a></h1>
+<section id="thermal-equivalents">
+<h2><span class="section-number">5.1. </span>Thermal equivalents<a class="headerlink" href="#thermal-equivalents" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="steps-of-network-reduction">
+<h2><span class="section-number">5.2. </span>Steps of network reduction<a class="headerlink" href="#steps-of-network-reduction" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="parallel-and-series-couplings">
+<h2><span class="section-number">5.3. </span>Parallel and series couplings<a class="headerlink" href="#parallel-and-series-couplings" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="starpoint-elimination">
+<h2><span class="section-number">5.4. </span>Starpoint elimination<a class="headerlink" href="#starpoint-elimination" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="linearization-to-the-thermal-potential">
+<h2><span class="section-number">5.5. </span>Linearization to the thermal potential<a class="headerlink" href="#linearization-to-the-thermal-potential" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="conversion-between-potential-and-power-sources">
+<h2><span class="section-number">5.6. </span>Conversion between potential and power sources<a class="headerlink" href="#conversion-between-potential-and-power-sources" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="sink-temperatures">
+<h2><span class="section-number">5.7. </span>Sink temperatures<a class="headerlink" href="#sink-temperatures" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="effective-optical-properties">
+<h2><span class="section-number">5.8. </span>Effective optical properties<a class="headerlink" href="#effective-optical-properties" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,7 +483,27 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-equivalents">5.1. Thermal equivalents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-of-network-reduction">5.2. Steps of network reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-and-series-couplings">5.3. Parallel and series couplings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starpoint-elimination">5.4. Starpoint elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearization-to-the-thermal-potential">5.5. Linearization to the thermal potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-between-potential-and-power-sources">5.6. Conversion between potential and power sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sink-temperatures">5.7. Sink temperatures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-optical-properties">5.8. Effective optical properties</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
