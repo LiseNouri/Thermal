@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Exercises &#8212; Spacecraft Thermal Design Lecture Notes</title>
+    <title>Exercises &#8212; Spacecraft Thermal Design Lecture Notes</title>
   
   
   
@@ -171,11 +171,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Name of Numbered Part 1</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Unit1.html">1. Background Theory and Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit2.html">2. Spacecraft Thermal Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Unit9.html">3. Thermal Modelling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Name of Not-numbered Part 2</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises</a></li>
 </ul>
 
     </div>
@@ -371,8 +375,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">4.1. Blackbody Earth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">4.2. Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">Blackbody Earth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-exchange-in-a-spacecraft">Radiation Exchange in a Spacecraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-infinite-plates">Two Infinite Plates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spexone-polarimeter">SPEXone Polarimeter</a></li>
 </ul>
             </nav>
         </div>
@@ -385,22 +392,23 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1><span class="section-number">4. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <section id="blackbody-earth">
-<h2><span class="section-number">4.1. </span>Blackbody Earth<a class="headerlink" href="#blackbody-earth" title="Permalink to this heading">#</a></h2>
-<p>Calculate the radiant flux in an orbit at 200 km altitude that is emitted by the earth. Assume that Earth is a black body, Black body temperature T = 252 K and Earth mean radius R = 6371 km.</p>
+<h2>Blackbody Earth<a class="headerlink" href="#blackbody-earth" title="Permalink to this heading">#</a></h2>
+<p>Calculate the radiant flux in an orbit at 200 km altitude that is emitted by the earth.
+Assume that Earth is a black body, Black body temperature T = 252 K and Earth mean radius R = 6371 km.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Click to see the solution</p>
 <p>The solution goes here</p>
 </div>
 </section>
 <section id="heat-balance-in-a-cube">
-<h2><span class="section-number">4.2. </span>Heat Balance in a Cube<a class="headerlink" href="#heat-balance-in-a-cube" title="Permalink to this heading">#</a></h2>
+<h2>Heat Balance in a Cube<a class="headerlink" href="#heat-balance-in-a-cube" title="Permalink to this heading">#</a></h2>
 <p>Consider a 1 m cube, where the panel -Z  points to nadir, and the Y axis corresponds to the flight direction.
 The panels in ±Z and ±Y have the following optical properties: <span class="math notranslate nohighlight">\(\alpha_s /\epsilon\)</span>  = 0.15/0.75 (SSM) whereas the ±X panels have view to space and are perfectly insulated.
-The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel can be seen in the <a class="reference internal" href="#exercise2"><span class="std std-numref">Table 4.1</span></a>.</p>
+The cube follows a polar earth orbit at 750 km altitude and the fluxes per panel can be seen in the <a class="reference internal" href="#exercise2"><span class="std std-numref">Table 1</span></a>.</p>
 <table class="table" id="exercise2">
-<caption><span class="caption-number">Table 4.1 </span><span class="caption-text">Orbit averaged absorbed fluxes per panel (in W)</span><a class="headerlink" href="#exercise2" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Orbit averaged absorbed fluxes per panel (in W)</span><a class="headerlink" href="#exercise2" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Solar</p></th>
@@ -440,6 +448,44 @@ This means that there are no temperature gradients within the body, because the 
 <p>Solving for T:</p>
 <p><span class="math notranslate nohighlight">\(T=276K=3^{\circ} \)</span></p>
 </div>
+</section>
+<section id="radiation-exchange-in-a-spacecraft">
+<h2>Radiation Exchange in a Spacecraft<a class="headerlink" href="#radiation-exchange-in-a-spacecraft" title="Permalink to this heading">#</a></h2>
+<p>Assess view factor between solar panel rear side and S/C side wall and space.
+Consider first that the solar panel size is 100 x 200 mm and S/C side wall is 100 x 300 mm.
+Repeat for S/C side wall 100 x 50 mm.</p>
+</section>
+<section id="two-infinite-plates">
+<h2>Two Infinite Plates<a class="headerlink" href="#two-infinite-plates" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="infiniteplates">
+<a class="reference internal image-reference" href="_images/InfinitePlates.png"><img alt="_images/InfinitePlates.png" src="_images/InfinitePlates.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Heat flows of two infinite plates</span><a class="headerlink" href="#infiniteplates" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="spexone-polarimeter">
+<h2>SPEXone Polarimeter<a class="headerlink" href="#spexone-polarimeter" title="Permalink to this heading">#</a></h2>
+<p>PACE’s SPEXone instrument <a class="footnote-reference brackets" href="#label1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is a multi-angle polarimeter that measures sunlight intensity, Degree of Linear Polarization (DoLP), and Angle of Linear Polarization (AoLP) from Earth’s atmosphere, land surface, and ocean.
+Its development aimed to achieve high accuracy in DoLP measurements, enabling accurate characterization of aerosols, which are a significant source of error in climate change quantification.</p>
+<p>The development of SPEXone is the result of a collaboration between SRON Netherlands Institute for Space Research and Airbus Netherlands, with help from experts from TNO and other dutch companies.</p>
+<p>Some characteristics of the instrument are:</p>
+<ul class="simple">
+<li><p>Heat dissipation: 12 W</p></li>
+<li><p>Size: 40x30x15 <span class="math notranslate nohighlight">\(cm^3\)</span></p></li>
+<li><p>Radiator facing space: <span class="math notranslate nohighlight">\(\alpha/\epsilon\)</span> = 0.2/0.8 (Solar White)</p></li>
+<li><p>SLI towards Spacecraft, radiative link with <span class="math notranslate nohighlight">\(\alpha/\epsilon\)</span> = 0.14 / 0.035</p></li>
+<li><p>3 Ti alloy struts: k= 7 W/m K, L =15cm, A = <span class="math notranslate nohighlight">\(2 cm^2\)</span> per strut</p></li>
+<li><p>Connection Radiator - Instrument: Strap: 1 W/K</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{SC}\)</span> = 270 K, assumed black body</p></li>
+<li><p>Environment: 45 W on radiator</p></li>
+</ul>
+<p>Considering that the instrument has an operational temperature of 25 degrees, is this a good thermal design? How would you improve it?</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="label1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pace.oceansciences.org/spexone.htm">SPEXone instrument</a></p>
+</aside>
 </section>
 </section>
 
@@ -498,8 +544,11 @@ This means that there are no temperature gradients within the body, because the 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">4.1. Blackbody Earth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">4.2. Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">Blackbody Earth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-exchange-in-a-spacecraft">Radiation Exchange in a Spacecraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-infinite-plates">Two Infinite Plates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spexone-polarimeter">SPEXone Polarimeter</a></li>
 </ul>
   </nav></div>
 
