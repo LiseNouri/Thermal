@@ -7,7 +7,8 @@ Assume that Earth is a black body, Black body temperature T = 252 K and Earth me
 
 ```{admonition} Click to see the solution
 :class: dropdown, tip
-The solution goes here
+$Q_{total}=4\,\pi\, R^2\, \sigma \,T^4 = 4\,\pi\, (6371+200)^2\, 5.67\cdot 10^{-8} \,252^4 = 128.05[MW]
+$
 ```
 ## Heat Balance in a Cube
 Consider a 1 m cube, where the panel -Z  points to nadir, and the Y axis corresponds to the flight direction. 

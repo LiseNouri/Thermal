@@ -416,16 +416,90 @@ The spectral of a black body at a given wavelength and temperature can be descri
 <div class="math notranslate nohighlight" id="equation-stephanboltzmann">
 <span class="eqno">(3.2)<a class="headerlink" href="#equation-stephanboltzmann" title="Permalink to this equation">#</a></span>\[
 \Phi_{total}(T)= \int \Phi_b(\lambda, T) d\lambda = \sigma T^{4} [\frac{W}{m^2}]\]</div>
-<p>Where
-*<span class="math notranslate nohighlight">\(\sigma\)</span> = Stephan Boltzmann’s constant = <span class="math notranslate nohighlight">\(5.67\cdot 10^{8} W/m^2/K^4\)</span></p>
+<p>Where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = Stephan Boltzmann’s constant = <span class="math notranslate nohighlight">\(5.67\cdot 10^{8} W/m^2/K^4\)</span></p></li>
+</ul>
 <p>Note in that Planck’s law uses the Boltzmann’s constant k, and Stephan Boltzmann’s law uses the Stephan Boltzmann’s constant <span class="math notranslate nohighlight">\(\sigma\)</span>.
 While named after the same person, these are not the same constants and have vastly different values and units.
 During this course you will make a lot of use of the Stephan Boltzmann’s constant <span class="math notranslate nohighlight">\(\sigma\)</span>, the other we won’t encounter again.</p>
-<p>The black body radiation as function of the wavelength for several temperatures are graphed in Figure 3.
+<p>The black body radiation as function of the wavelength for several temperatures are graphed bellow.
 It shows that the magnitude of the peak and total radiation changes with the temperature. Higher temperatures will emit more radiation overall, and the peak of the graph is located at lower wavelengths.
 Compare for example the sun with a glowing ember; the sun it hot white, while the relatively cooler ember glows in a deep red.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span> 
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792458e+8</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.380649e-23</span> 
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">planck</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">wav</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">wav</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">intensity</span>
+
+<span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">3e-6</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
+
+<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3500</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">4500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">5500</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">planck</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span><span class="o">*</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity (kJ/nm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Planck&#39;s Law&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/42809e298691e6483108f6af4ed7a417052b0c05086099222cb07940f026a338.png" src="_images/42809e298691e6483108f6af4ed7a417052b0c05086099222cb07940f026a338.png" />
+</div>
+</div>
 <p>The wavelength at which the peak of the radiation occurs is inversely proportional to the temperature of the black body.
-This effect is described by Wien’s displacement law:.</p>
+This effect is described by Wien’s displacement law:</p>
+<div class="math notranslate nohighlight" id="equation-wienlaw">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-wienlaw" title="Permalink to this equation">#</a></span>\[
+\lambda_{max}\, T \approx 2898 [\mu m \, K]\]</div>
+<p>Using Wien’s displacement law, it is possible to determine the peak radiation point of any black body.</p>
+<table class="table" id="wienlawtable">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Wien’s Law</span><a class="headerlink" href="#wienlawtable" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Sun</p></th>
+<th class="head"><p>Boiling Water</p></th>
+<th class="head"><p>Earth</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Blackbody Temperature</p></td>
+<td><p>5788 K</p></td>
+<td><p>372 K</p></td>
+<td><p>252 K</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span></p></td>
+<td><p>0.5 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
+<td><p>7.8 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
+<td><p>11.5 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
