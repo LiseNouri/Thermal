@@ -16,11 +16,20 @@ The heat produced by the sun is represented by the Solar Constant $S_\odot^N$, e
 ```{glossary}
 The Solar Constant: 
 	The value of the nominal total solar irradiance corresponds to the mean total electromagnetic energy from the Sun, integrated over all wavelengths, incident per unit area, and per unit time at a distance of 1 AU.
-```
+``` 
 The current best estimate of the Solar constant is 1361 W/m2. Note that the Solar Constant is a mean value and should not be strictly considered a constant. The long term solar cycle varies approximately with 1.3 W/m2.  (ECSS-E-ST-10-04C-Rev1). The nominal value for the solar constant was determined officially in IAU 2015 resolution B3, during your career you are likely to encounter slightly different values from older documents. (Prsa et al, 2016, nom values).
 A satellite around earth is exposed to different levels of solar radiation. When the earth is at Aphelion (summer solstice) it will be 1316 W/m2, in Perihelion (Winter solstice) 1407 W/m2. 
 
 ## Albedo
+Solar radiation is also reflected by planetary bodies. When it is reflected by earth this is called Albedo. 
+When the light is reflected, the spectral properties are not changed, though the radiation is assumed to be diffuse after reflection. 
+In other words, the albedo radiation does not travel in parallel rays. 
+Typically albedo is expressed as a fraction of the solar constant. 
+An average value is 0.3. this means 30% of the power of the solar radiation is reflected, thus the heating of the albedo power is 0.3⋅1361=408 W/m^2.
+Albedo varies locally in an orbit, especially around earth. You can see this yourself, deep sea is almost black, while snow and white clouds are very reflective. 
+An example of daily variation over the earth surface is shown in XXX. 
+You can see in this figure that the snowy polar regions are much more reflective than the equatorial regions. 
+Note also that albedo only occurs on the sunlit parts of the globe. This figure was taken in winter, thus there is no reflection on the north pole. 
 
 
 ## Planetary Radiation
