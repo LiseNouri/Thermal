@@ -37,7 +37,7 @@ $$
 $$(StephanBoltzmann)
 
 Where
-* $\sigma$ = Stephan Boltzmann’s constant = $5.67\cdot 10^{8} W/m^2/K^4$
+* $\sigma$ = Stephan Boltzmann’s constant = $5.67\cdot 10^{-8} W/m^2/K^4$
 
 Note in that Planck’s law uses the Boltzmann’s constant k, and Stephan Boltzmann’s law uses the Stephan Boltzmann’s constant $\sigma$. 
 While named after the same person, these are not the same constants and have vastly different values and units. 
