@@ -85,7 +85,8 @@ One example of this is that convection might cool electronics during regular tes
 Once the system is integrated on the launch vehicle, it will also mostly be in a temperature controlled environment. 
 Launch providers provide the temperature environment they offer in the launch manual. 
 Once encapsulated and on the pad, the environment might be less controlled. 
-This can be seen in the outtakes of the manuals for Ariane 5 [^Ariane5] and Falcon 9 [^Falcon9]. Ariane 5 only specifies the air temperature in the last phases, whereas the falcon 9 does not offer any temperature control for the rollout of the system. 
+This can be seen in the outtakes of the manuals for Ariane 5 {cite}`Ariane5` and Falcon 9 {cite}`Falcon9`. 
+Ariane 5 only specifies the air temperature in the last phases, whereas the falcon 9 does not offer any temperature control for the rollout of the system. 
 
 
 ## Ascent environment
@@ -99,15 +100,10 @@ During ascent into orbit, the spacecraft will encounter a number of thermal effe
 For the first minutes of a rocket flight, the satellite is under a fairing. 
 This fairing will heat up significantly due to the aerodynamic friction with the atmosphere. 
 The satellite is under the fairing for only a short mount of time, as a whole the satellite is unlikely to be affected, but external components can be, such as the insulation, external paint, radiators or solar panels. 
-The heating under a fairing can be expressed as a infra-red flux (as done for Vega-C {cite}`VegaC` and Ariane 5{cite}`Ariane5`), or as a temperature (As done by e.g. Falcon 9 [^Falcon9] and Atlas [^AtlasV]).
+The heating under a fairing can be expressed as a infra-red flux (as done for Vega-C {cite}`VegaC` and Ariane 5 {cite}`Ariane5`), or as a temperature (As done by e.g. Falcon 9 {cite}`Falcon9` and {cite}`AtlasV`).
 
 Vega-C and Ariane 5 manual state that the radiation due to heating of the fairing is at maximum 1000W/m2. Below is the figure from the Atlas manual, showing a peak temperature of 200 deg. C for parts of the fairing. 
 
-
-
-
-[^Falcon9]: [Falcon 9 User Manual](https://www.spacex.com/media/falcon-users-guide-2021-09.pdf)
-[^AtlasV]: [Atlas V User Manual](https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010.pdf)
 
 After fairing jettison, the satellite itself is exposed to this aerothermal heating due to the free molecular flow. 
 Generally the fairing is deployed when this effect drops below 1135 W/m2. The exact heating profile depends on the mission profile of the launcher. The effect decrease rapidly after fairing jettison, but can rise and drop during the mission. Also This will mainly affect external systems with a low thermal mass. 
