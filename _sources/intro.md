@@ -28,6 +28,7 @@ In more detail the student will be able to:
 ```
 
 # Bibliography
-
+  
 ```{bibliography}
+:style: unsrt
 ```
