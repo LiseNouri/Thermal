@@ -22,7 +22,7 @@ In more detail the student will be able to:
 - Generate and use analytical thermal analysis models
 - Generate and use numerical thermal analysis models
 
-
+<p><iframe allow="fullscreen" style="width: 100%!important;height: 500px;" src="https://prime-applets.ewi.tudelft.nl/graph/AE4ASM526/show?domains&amp;view=domains" allowfullscreen="allowfullscreen"></iframe></p>
 
 ```{tableofcontents}
 ```
