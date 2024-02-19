@@ -19,10 +19,7 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# In _config.yml
-sphinx:
-  config:
-    bibtex_reference_style: super
+
 # Information about where the book exists on the web
 repository:
   url: https://lisenouri.github.io/Thermal/intro.html  # Online location of your book
