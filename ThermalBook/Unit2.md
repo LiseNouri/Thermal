@@ -19,11 +19,10 @@ The Solar Constant:
 ``` 
 The current best estimate of the Solar constant is 1361 W/m2. 
 Note that the Solar Constant is a mean value and should not be strictly considered a constant. 
-The long term solar cycle varies approximately with 1.3 W/m2. [^ECSS1]
+The long term solar cycle varies approximately with 1.3 W/m2. {cite}`SpaceEnvironment`
 The nominal value for the solar constant was determined officially in IAU 2015 resolution B3, during your career you are likely to encounter slightly different values from older documents. (Prsa et al, 2016, nom values).
 A satellite around earth is exposed to different levels of solar radiation. When the earth is at Aphelion (summer solstice) it will be 1316 W/m2, in Perihelion (Winter solstice) 1407 W/m2. 
 
-[^ECSS1]: [ECSS-E-ST-10-04C-Rev1](https://ecss.nl/standard/ecss-e-st-10-04c-rev-1-space-environment-15-june-2020/)
 ## Albedo
 Solar radiation is also reflected by planetary bodies. When it is reflected by earth this is called Albedo. 
 When the light is reflected, the spectral properties are not changed, though the radiation is assumed to be diffuse after reflection. 

@@ -66,7 +66,8 @@ Repeat for S/C side wall 100 x 50 mm.
 
 ```{admonition} Click to see the solution
 :class: dropdown, tip
-The solution goes here
+The solution is in lecture W2.2
+
 ```
 
 ## Two Infinite Plates
