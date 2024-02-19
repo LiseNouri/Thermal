@@ -39,5 +39,6 @@ parse:
     - deflist
     - amsmath
     - dollarmath
+    - hyperref
 
 

@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Unit7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -400,7 +398,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="thermal-modelling">
+  <section id="thermal-modelling">
 <h1><span class="section-number">7. </span>Thermal Modelling<a class="headerlink" href="#thermal-modelling" title="Permalink to this heading">#</a></h1>
 <p>Learning Objectives:</p>
 <ul class="simple">
@@ -420,10 +418,9 @@ In order to accomplish this, the fundamental geometric shapes that comprise the 
 Every node represents an isothermal component that is defined by its temperature Ti and its thermal capacitance Ci.
 The numerical method used in this case is referred to as the ‘lumped parameter network’. This is because the continuous parameters of the thermal system have been condensed or grouped together into a discrete set of nodes.</p>
 <p>The energy equation of each node (i) can be written as:</p>
-<div class="math notranslate nohighlight" id="equation-energyequation">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-energyequation" title="Permalink to this equation">#</a></span>\[
+<p>$$
 C_{i} \frac{dT_i}{dt}=Q_i+∑_{j=1}^n K_{ij}\cdot (T_j-T_i )+∑_{j=1}^n R_{ij} \cdot (T_j^4-T_i^4)
-\]</div>
+$$ (EnergyEquation)</p>
 <p>Applying this equation to all the individual nodes of the spacecraft results in a system of ordinary differential equations.
 Solving this system allows us to determine the temperature of each specific point.
 In order to determine the temperature of the satellite, it is necessary to have both the conductive and radiative thermal couplings matrices, as well as the external loads and dissipation thermal loads vectors, as stated in the equation.

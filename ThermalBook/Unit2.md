@@ -99,12 +99,12 @@ During ascent into orbit, the spacecraft will encounter a number of thermal effe
 For the first minutes of a rocket flight, the satellite is under a fairing. 
 This fairing will heat up significantly due to the aerodynamic friction with the atmosphere. 
 The satellite is under the fairing for only a short mount of time, as a whole the satellite is unlikely to be affected, but external components can be, such as the insulation, external paint, radiators or solar panels. 
-The heating under a fairing can be expressed as a infra-red flux (as done for Vega-C [^VegaC] and Ariane 5[^Ariane5]), or as a temperature (As done by e.g. Falcon 9 [^Falcon9] and Atlas [^AtlasV]).
+The heating under a fairing can be expressed as a infra-red flux (as done for Vega-C {cite}`VegaC` and Ariane 5{cite}`Ariane5`), or as a temperature (As done by e.g. Falcon 9 [^Falcon9] and Atlas [^AtlasV]).
 
 Vega-C and Ariane 5 manual state that the radiation due to heating of the fairing is at maximum 1000W/m2. Below is the figure from the Atlas manual, showing a peak temperature of 200 deg. C for parts of the fairing. 
 
-[^VegaC]: [Vega C User Manual](https://www.arianespace.com/wp-content/uploads/2020/10/SSMS-Vega-C-UsersManual-Issue-1-Rev0-Sept2020.pdf)
-[^Ariane5]: [Ariane 5 User Manual](https://www.arianespace.com/wp-content/uploads/2011/07/Ariane5_Users-Manual_October2016.pdf)
+
+
 
 [^Falcon9]: [Falcon 9 User Manual](https://www.spacex.com/media/falcon-users-guide-2021-09.pdf)
 [^AtlasV]: [Atlas V User Manual](https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010.pdf)
