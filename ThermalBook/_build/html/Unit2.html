@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Unit2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -400,7 +402,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="spacecraft-thermal-environment">
+  <section class="tex2jax_ignore mathjax_ignore" id="spacecraft-thermal-environment">
 <h1><span class="section-number">2. </span>Spacecraft Thermal Environment<a class="headerlink" href="#spacecraft-thermal-environment" title="Permalink to this heading">#</a></h1>
 <p>Spacecraft encounter a number of environments during their lifetime. In space the spacecraft is under the influence of: Deep space, Solar radiation, Albedo and Planetary infrared radiation</p>
 <section id="deep-space">
@@ -411,7 +413,7 @@ Taking into account the background radiation is significant for certain applicat
 <section id="solar-radiation">
 <h2><span class="section-number">2.2. </span>Solar Radiation<a class="headerlink" href="#solar-radiation" title="Permalink to this heading">#</a></h2>
 <p>Solar <a class="reference internal" href="Unit1.html#term-Radiation"><span class="xref std std-term">radiation</span></a> is the heat coming from the sun. The solar spectrum can be approximated by a black body curve with a temperature of 5778K <a class="footnote-reference brackets" href="#ecss" id="id2">1</a>, the peak of this spectrum is around 500nm wavelength. Most power of this radiation is in the familiar visible spectrum.</p>
-<p>The heat produced by the sun is represented by the Solar Constant $S_\odot^N$, expressed in $W/m^2$.</p>
+<p>The heat produced by the sun is represented by the Solar Constant <span class="math notranslate nohighlight">\(S_\odot^N\)</span>, expressed in <span class="math notranslate nohighlight">\(W/m^2\)</span>.</p>
 <dl class="glossary simple">
 <dt id="term-The-Solar-Constant">The Solar Constant: <a class="headerlink" href="#term-The-Solar-Constant" title="Permalink to this term">#</a></dt><dd><p>The value of the nominal total solar irradiance corresponds to the mean total electromagnetic energy from the Sun, integrated over all wavelengths, incident per unit area, and per unit time at a distance of 1 AU.</p>
 </dd>
@@ -428,7 +430,7 @@ A satellite around earth is exposed to different levels of solar radiation. When
 When the light is reflected, the spectral properties are not changed, though the radiation is assumed to be diffuse after reflection.
 In other words, the albedo radiation does not travel in parallel rays.</p>
 <p>Typically albedo is expressed as a fraction of the solar constant.
-An average value is 0.3. this means 30% of the power of the solar radiation is reflected, thus the heating of the albedo power is $0.3 \cdot 1361, =, 408 W/m^2$.
+An average value is 0.3. this means 30% of the power of the solar radiation is reflected, thus the heating of the albedo power is <span class="math notranslate nohighlight">\(0.3 \cdot 1361\, =\, 408 W/m^2\)</span>.
 Albedo varies locally in an orbit, especially around earth. You can see this yourself, deep sea is almost black, while snow and white clouds are very reflective.</p>
 <p>You can see in this figure that the snowy polar regions are much more reflective than the equatorial regions.
 Note also that albedo only occurs on the sunlit parts of the globe. This figure was taken in winter, thus there is no reflection on the north pole.</p>

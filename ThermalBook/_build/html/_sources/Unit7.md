@@ -1,17 +1,12 @@
 # Thermal Modelling
 
-Learning Objectives:
-- Understand GMM and TMM
-- Understand raytracing to determine radiative heat exchange and its limitations
-- Understand the differences between Lumped finite-difference method vs. Finite element methods
 
-## Thermal Modelling
 Modelling is a mathematical representation of a physical system. In terms of space, time, and parameter discretization, the modelling approach can be continuous for simple analytical models, discretized in a spatial network of nodes and node couplings, or statistical as in the Monte Carlo ray-tracing method used to compute radiative exchanges. 
 
 To begin the mathematical procedure, the first step is to establish the **Geometrical Mathematical Model (GMM)**. 
 This model represents the system's geometry and is essential for calculating the external thermal loads on the outer surfaces and the radiation exchange between different parts of the spacecraft. 
 Typically, it involves a simplified representation of geometry, excluding any details that are not relevant from a thermal perspective. 
-The GMM can be estimated analytically, but Monte Carlo Ray-Tracing (MCRT) is the standard industry solution.
+The GMM can be estimated analytically, but {ref}`MCRT` (MCRT) is the standard industry solution.
 
 After establishing a fundamental geometry for thermal analysis, this geometry is divided into a network of nodes. 
 In order to accomplish this, the fundamental geometric shapes that comprise the geometrical mathematical model are interconnected. 
@@ -41,7 +36,9 @@ Thermal Design Cycle
 Since the thermal analysis of spacecraft in orbit is a computationally expensive task, software tools now exist to automate the process and provide feedback to the engineer to help arrive at the important analysis cases using fewer parametric runs than traditional methods. 
 Some of the industry standard programs are ESARAD, TRASYS, THERMICA, SINDARadCAD (radiation exchange packages) and ESATAN, SINDA (Lumped finite-difference thermal balance packages)
 
+(MCRT)=
 ## Monte-Carlo Raytracing 
+
 The Monte-Carlo Raytracing (MCRT) method considers the individual history of thermal radiation energy, from the point of emission to the point of absorption. 
 These energy packets may follow an infinite number of paths: rays can be emitted from any point on every radiative face, in any direction, and may reach and be reflected by any other radiative face in the model. 
 An estimate of the radiative couplings (and heat fluxes) can be made by averaging the results obtained from a finite random sample of rays.

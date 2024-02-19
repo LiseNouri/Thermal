@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Unit3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -393,34 +395,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="radiation-and-heat-balance">
+  <section class="tex2jax_ignore mathjax_ignore" id="radiation-and-heat-balance">
 <h1><span class="section-number">3. </span>Radiation and Heat Balance<a class="headerlink" href="#radiation-and-heat-balance" title="Permalink to this heading">#</a></h1>
 <section id="black-body-radiation">
 <h2><span class="section-number">3.1. </span>Black Body Radiation<a class="headerlink" href="#black-body-radiation" title="Permalink to this heading">#</a></h2>
 <p>A perfect body emits and absorbs the maximum amount of radiation at all wavelengths only as a function of the temperature of that body.
 The spectral of a black body at a given wavelength and temperature can be described by Planck’s law:</p>
-<p>$$
-\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^2} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1}</p>
-<p>$$(PlanckLaw)</p>
+<div class="math notranslate nohighlight" id="equation-plancklaw">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-plancklaw" title="Permalink to this equation">#</a></span>\[
+\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^2} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1}\]</div>
 <p>Where:</p>
 <ul class="simple">
-<li><p>$\lambda$ = wavelength</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> = wavelength</p></li>
 <li><p>T = absolute temperature</p></li>
-<li><p>k = Boltzmann’s constant = $1.4\cdot 10^{-23} kg \cdot m^2/s^2/K$</p></li>
-<li><p>h = Planck’s constant = $6.6\cdot 10^{-34} kg \cdot m^2/s$</p></li>
-<li><p>c = velocity of light in vacuum = $3 \cdot 10^{8} m/s$</p></li>
+<li><p>k = Boltzmann’s constant = <span class="math notranslate nohighlight">\(1.4\cdot 10^{-23} kg \cdot m^2/s^2/K\)</span></p></li>
+<li><p>h = Planck’s constant = <span class="math notranslate nohighlight">\(6.6\cdot 10^{-34} kg \cdot m^2/s\)</span></p></li>
+<li><p>c = velocity of light in vacuum = <span class="math notranslate nohighlight">\(3 \cdot 10^{8} m/s\)</span></p></li>
 </ul>
 <p>Integrating over the wavelength spectrums, results in Stephan Boltzmann’s law, the total flux emitted per unit area as a function of only temperature.</p>
-<p>$$
-\Phi_{total}(T)= \int \Phi_b(\lambda, T) d\lambda = \sigma T^{4} [\frac{W}{m^2}]</p>
-<p>$$(StephanBoltzmann)</p>
+<div class="math notranslate nohighlight" id="equation-stephanboltzmann">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-stephanboltzmann" title="Permalink to this equation">#</a></span>\[
+\Phi_{total}(T)= \int \Phi_b(\lambda, T) d\lambda = \sigma T^{4} [\frac{W}{m^2}]\]</div>
 <p>Where</p>
 <ul class="simple">
-<li><p>$\sigma$ = Stephan Boltzmann’s constant = $5.67\cdot 10^{-8} W/m^2/K^4$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = Stephan Boltzmann’s constant = <span class="math notranslate nohighlight">\(5.67\cdot 10^{-8} W/m^2/K^4\)</span></p></li>
 </ul>
-<p>Note in that Planck’s law uses the Boltzmann’s constant k, and Stephan Boltzmann’s law uses the Stephan Boltzmann’s constant $\sigma$.
+<p>Note in that Planck’s law uses the Boltzmann’s constant k, and Stephan Boltzmann’s law uses the Stephan Boltzmann’s constant <span class="math notranslate nohighlight">\(\sigma\)</span>.
 While named after the same person, these are not the same constants and have vastly different values and units.
-During this course you will make a lot of use of the Stephan Boltzmann’s constant $\sigma$, the other we won’t encounter again.</p>
+During this course you will make a lot of use of the Stephan Boltzmann’s constant <span class="math notranslate nohighlight">\(\sigma\)</span>, the other we won’t encounter again.</p>
 <p>The black body radiation as function of the wavelength for several temperatures are graphed bellow.
 It shows that the magnitude of the peak and total radiation changes with the temperature. Higher temperatures will emit more radiation overall, and the peak of the graph is located at lower wavelengths.
 Compare for example the sun with a glowing ember; the sun it hot white, while the relatively cooler ember glows in a deep red.</p>
@@ -472,9 +474,9 @@ Compare for example the sun with a glowing ember; the sun it hot white, while th
 </div>
 <p>The wavelength at which the peak of the radiation occurs is inversely proportional to the temperature of the black body.
 This effect is described by Wien’s displacement law:</p>
-<p>$$
-\lambda_{max}, T \approx 2898 [\mu m , K]</p>
-<p>$$(WienLaw)</p>
+<div class="math notranslate nohighlight" id="equation-wienlaw">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-wienlaw" title="Permalink to this equation">#</a></span>\[
+\lambda_{max}\, T \approx 2898 [\mu m \, K]\]</div>
 <p>Using Wien’s displacement law, it is possible to determine the peak radiation point of any black body.</p>
 <table class="table" id="wienlawtable">
 <caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Wien’s Law</span><a class="headerlink" href="#wienlawtable" title="Permalink to this table">#</a></caption>
@@ -497,10 +499,10 @@ This effect is described by Wien’s displacement law:</p>
 <td><p>372 K</p></td>
 <td><p>252 K</p></td>
 </tr>
-<tr class="row-odd"><td><p>$\lambda_{max}$</p></td>
-<td><p>0.5 $\mu m$</p></td>
-<td><p>7.8 $\mu m$</p></td>
-<td><p>11.5 $\mu m$</p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_{max}\)</span></p></td>
+<td><p>0.5 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
+<td><p>7.8 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
+<td><p>11.5 <span class="math notranslate nohighlight">\(\mu m\)</span></p></td>
 </tr>
 </tbody>
 </table>
