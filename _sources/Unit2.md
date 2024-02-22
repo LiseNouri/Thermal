@@ -53,20 +53,35 @@ The orbit of a spacecraft also changes the thermal environment.
 - Geostationary orbit: Only seasonal eclipses
 
 The effect of the environments described in the previous sections, is dependent on the orbit of your spacecraft. 
-For a typical mission of a Spacecraft in orbit, the thermal engineer will need to consider the planetary albedo and infrared radiation of the body it orbits and the solar input. So for example for a regular satellite orbiting the earth, the influence of earth and sun needs to be considered, but the thermal effect of the moon can be ignored. For a satellite on an interplanetary trajectory or in a Lagrange point, or even a trajectory between the moon and earth, only the sun can be considered. It is of course up to the Thermal engineer to decide whether these influences are indeed negligible. 
+For a typical mission of a Spacecraft in orbit, the thermal engineer will need to consider the planetary albedo and infrared radiation of the body it orbits and the solar input. 
+So for example for a regular satellite orbiting the earth, the influence of earth and sun needs to be considered, but the thermal effect of the moon can be ignored. 
+For a satellite on an interplanetary trajectory or in a Lagrange point, or even a trajectory between the moon and earth, only the sun can be considered. 
+It is of course up to the Thermal engineer to decide whether these influences are indeed negligible. 
+
 The orbit of a spacecraft is chosen for mission specific reasons. 
 In the following paragraphs, some characteristics will be described. 
+
 Many satellites fly in a sun-synchronous dusk dawn orbit in LEO. 
 This orbit is nearly circular and praised for its constant light conditions. 
 The thermal environment of a satellite in this orbit is also very constant. 
 There are mostly no eclipses and hardly any orbital variation in the thermal conditions. 
 The albedo and planetary radiation will also be relatively constant, as the satellite has the same altitude throughout the orbit, and the satellite (if nadir pointing) will have the same orientation with respect to the sunlit part of the planet. 
+
 Any orbit LEO circular orbits will encounter eclipses, which vary with the season due to the solar inclination. 
-The eclipse can be up to 40 minutes long. Note that these satellite will experience a lot of eclipses, and thus thermal cycles, throughout their lifetime. The influence of albedo and earth radiation is significant. 
-A elliptical orbit, for example a molniya orbit will see more variation throughout their orbit, as the satellite travels from a low altitude in perigee to a high altitude in apogee. As the satellite will spend a long time in apogee, the thermal engineer might want to check whether this can occur in eclipse in any season. With some elliptical orbits this eclipse time can reach hours, which will be a driving thermal case. 
-A satellite in GEO will have significantly less influence from the planet onto its thermal environment, though it cannot entirely be ignored. The satellite will be illuminated from all sides, every day. It will also encounter some seasonal eclipses due to the solar inclination. The number of eclipses can be a lot less, compared to a LEO orbit, but can be up to 70 minutes. 
+The eclipse can be up to 40 minutes long. Note that these satellite will experience a lot of eclipses, and thus thermal cycles, throughout their lifetime. 
+The influence of albedo and earth radiation is significant. 
+
+A elliptical orbit, for example a molniya orbit will see more variation throughout their orbit, as the satellite travels from a low altitude in perigee to a high altitude in apogee.
+As the satellite will spend a long time in apogee, the thermal engineer might want to check whether this can occur in eclipse in any season. 
+With some elliptical orbits this eclipse time can reach hours, which will be a driving thermal case. 
+
+A satellite in GEO will have significantly less influence from the planet onto its thermal environment, though it cannot entirely be ignored. 
+The satellite will be illuminated from all sides, every day. It will also encounter some seasonal eclipses due to the solar inclination. 
+The number of eclipses can be a lot less, compared to a LEO orbit, but can be up to 70 minutes. 
+
 When considering orbits around other objects in our solar system, their specific constraints need to be considered. 
-For example, a spacecraft in Mercury orbit needs to consider the divergence of the solar rays, due to the proximity of the sun. Mercury also has a very slow rotation, so the planetary radiation greatly varies between the sun facing side and the dark side. 
+For example, a spacecraft in Mercury orbit needs to consider the divergence of the solar rays, due to the proximity of the sun. 
+Mercury also has a very slow rotation, so the planetary radiation greatly varies between the sun facing side and the dark side. 
 
 ## Internal heat sources
 
@@ -81,6 +96,7 @@ To keep the systems safe, often the environment is controlled. Integration facil
 Note that even specialized containers left out in the sun might heat up to unacceptable levels. 
 The integration and many test occur also under none-vacuum conditions. 
 This means convection can cause unexpected effects. 
+
 One example of this is that convection might cool electronics during regular testing, while in space these elements might overheat due to the lack of convection. 
 Once the system is integrated on the launch vehicle, it will also mostly be in a temperature controlled environment. 
 Launch providers provide the temperature environment they offer in the launch manual. 

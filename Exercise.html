@@ -384,6 +384,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">Blackbody Earth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-spacecraft">Heat Balance in a Spacecraft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-exchange-in-a-spacecraft">Radiation Exchange in a Spacecraft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-infinite-plates">Two Infinite Plates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spexone-polarimeter">SPEXone Polarimeter</a></li>
@@ -463,6 +464,38 @@ This means that there are no temperature gradients within the body, because the 
 <p><span class="math notranslate nohighlight">\(Q_{out}=A_{zy}\cdot \epsilon \cdot\sigma\cdot T^4\)</span></p>
 <p>Solving for T:</p>
 <p><span class="math notranslate nohighlight">\(T=276K=3^{\circ} \)</span></p>
+</div>
+</section>
+<section id="heat-balance-in-a-spacecraft">
+<h2>Heat Balance in a Spacecraft<a class="headerlink" href="#heat-balance-in-a-spacecraft" title="Permalink to this heading">#</a></h2>
+<p>Consider a spacecraft with two radiators of A m2 each.
+One radiator is permanently pointing to the Sun with a normal incidence, the other one is permanently in shade.
+The radiators are Optical Solar Reflectors (OSR) with the following optical properties <span class="math notranslate nohighlight">\(\alpha/\varepsilon =0.1/0.8\)</span>.
+In this case, we only consider the heat solar input (<span class="math notranslate nohighlight">\(S=1400W/m^2\)</span>) and there’s an internal equipment dissipation of 165W.
+The spacecraft may be represented as one node.</p>
+<ul class="simple">
+<li><p>What is the required radiator areas when the maximum temperature of the spacecraft is 33 degrees ?</p></li>
+</ul>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Click to see the solution</p>
+<p>First we establish the heat balance:</p>
+<p><span class="math notranslate nohighlight">\(Q_{in} = Q_{sun} +Q_R =\alpha A S +Q_R \)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{out} = 2 A \varepsilon \sigma T^4 \)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{in}= Q_{out}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha A S +Q_R =2 A \varepsilon \sigma T^4 \)</span></p>
+<p>Solving for the area (A):</p>
+<p><span class="math notranslate nohighlight">\(A=\frac{Q_R}{2 \varepsilon \sigma T^4 -\alpha S}\)</span></p>
+</div>
+<ul class="simple">
+<li><p>With that area, what is the heater power demand to keep <span class="math notranslate nohighlight">\(T_{min}&gt;= -30\)</span> degrees when the equipment is all off?</p></li>
+</ul>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Click to see the solution</p>
+<p><span class="math notranslate nohighlight">\(Q_{in} = Q_{sun} +Q_{heater} =\alpha A S +Q_{heater} \)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{out} = 2 A \varepsilon \sigma T^4 \)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{in}= Q_{out}\)</span></p>
+<p>Solving for the heat power demand:
+<span class="math notranslate nohighlight">\(Q_{heater}=2 A \varepsilon \sigma T^4 - \alpha A S\)</span></p>
 </div>
 </section>
 <section id="radiation-exchange-in-a-spacecraft">
@@ -575,6 +608,7 @@ Its development aimed to achieve high accuracy in DoLP measurements, enabling ac
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-earth">Blackbody Earth</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-cube">Heat Balance in a Cube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-balance-in-a-spacecraft">Heat Balance in a Spacecraft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiation-exchange-in-a-spacecraft">Radiation Exchange in a Spacecraft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-infinite-plates">Two Infinite Plates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spexone-polarimeter">SPEXone Polarimeter</a></li>
