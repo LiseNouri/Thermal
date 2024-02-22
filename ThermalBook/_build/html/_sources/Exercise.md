@@ -57,6 +57,49 @@ Solving for T:
 
 $T=276K=3^{\circ} $ 
 ```
+##  Heat Balance in a Spacecraft
+Consider a spacecraft with two radiators of A m2 each. 
+One radiator is permanently pointing to the Sun with a normal incidence, the other one is permanently in shade. 
+The radiators are Optical Solar Reflectors (OSR) with the following optical properties $\alpha/\varepsilon =0.1/0.8$. 
+In this case, we only consider the heat solar input ($S=1400W/m^2$) and there’s an internal equipment dissipation of 165W. 
+The spacecraft may be represented as one node. 
+
+- What is the required radiator areas when the maximum temperature of the spacecraft is 33 degrees ?
+
+```{admonition} Click to see the solution
+:class: dropdown, tip
+First we establish the heat balance: 
+
+$Q_{in} = Q_{sun} +Q_R =\alpha A S +Q_R $
+
+$Q_{out} = 2 A \varepsilon \sigma T^4 $
+
+$Q_{in}= Q_{out}$
+
+$\alpha A S +Q_R =2 A \varepsilon \sigma T^4 $
+
+Solving for the area (A): 
+
+$A=\frac{Q_R}{2 \varepsilon \sigma T^4 -\alpha S}$
+
+
+```
+
+- With that area, what is the heater power demand to keep $T_{min}>= -30$ degrees when the equipment is all off? 
+
+```{admonition} Click to see the solution
+:class: dropdown, tip
+$Q_{in} = Q_{sun} +Q_{heater} =\alpha A S +Q_{heater} $
+
+$Q_{out} = 2 A \varepsilon \sigma T^4 $
+
+$Q_{in}= Q_{out}$
+
+Solving for the heat power demand: 
+$Q_{heater}=2 A \varepsilon \sigma T^4 - \alpha A S$
+
+
+```
 
 ## Radiation Exchange in a Spacecraft
 

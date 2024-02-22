@@ -70,7 +70,7 @@ def planck(wav, T):
 
 wavelengths = np.arange(1e-9, 3e-6, 1e-9)
 
-temperatures = [3500, 4000, 4500, 5000, 5500]
+temperatures = [2000, 3000, 4000, 5000, 6000]
 
 for T in temperatures:
     intensity = planck(wavelengths, T)
