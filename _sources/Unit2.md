@@ -1,6 +1,7 @@
 # Spacecraft Thermal Environment
 
-Spacecraft encounter a number of environments during their lifetime. In space the spacecraft is under the influence of: Deep space, Solar radiation, Albedo and Planetary infrared radiation
+Spacecraft encounter a number of different thermal environments during their lifetime. 
+In space the spacecraft is under the influence of: Deep space, Solar Radiation, Albedo and Planetary Infrared Radiation
 
 ## Deep Space
 Deep space is the cold darkness that surrounds the spacecraft. Due to cosmic background radiation, the temperature of deep space is 2.7K. For most engineering purposes this is set at 3K.[^ECSS] 
