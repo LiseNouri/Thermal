@@ -1,64 +1,71 @@
 # Background Theory and Key Concepts
 
-## Key Concepts:
 
-This part of the lectures introduces some key concepts, and introduces a global overview of the thermal subsystem. More detail will be provided in subsequent lectures. 
 
-### Why spacecraft thermal control?
+This chapter will introduce some background theory and key concepts needed for thermal engineering. 
+
+## Types of Heat tranfer
+
+Heat transfer deals with the transfer of the thermal energy between the environment and the spacecraft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:
+```{glossary}
+Radiation
+  Heat transfer by electromagnetic radiation. No medium is required for this heat transfer. Heat is transported from one surface to another. 
+  This is also how the external fluxes from sun and planets transfer heat. This is the most important heat transfer mechanism in space. 
+
+Conduction
+  Conduction is the heat transfer by molecular interaction. This is heat transfer through parts and contact points. 
+  Locally this is important and essential within your system. 
+
+Convection:
+	Convection is the heat transfer by gas or fluid movement. 
+	This is absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight). 
+	Convection can be natural or forced (e.g. by a fan). Note that convection works different in space and in a gravity environment. Convection occurs due to a combination of temperature and density differences in the fluid, and body forces such as gravity. In a gravity environment hot fluids rise up as it is lighter than the surrounding fluids. 
+
+```
+## Heat Flux, Heat flow and Heat Transfer
+Heat transfer and heat flow is the transfer of thermal energy (heat) per unit time. 
+This is denoted with the symbol a capital Q. This is a scaler and expressed in Watt (W=J/s).
+
+Heat Flux is the transfer of thermal energy (heat) per unit time per unit area. 
+This is denoted with a Φ. The heat flux is a vector and expressed in W/m2 (=J/s/m2)
+
+## Temperature ranges
+
+During your time as thermal engineer you will encounter references to specific temperature ranges. 
+The exact definition can differ but in general:
+- The High temperature range considers temperature above 470K. 
+- The cryogenic temperature range considers temperatures below 200K.
+Two other important temperatures to remember:
+- 273.15 K = 0 °C : Useful for conversion between Kelvin and Celsius. Both are used in thermal engineering. 
+- 77 K  = -196 °C: Boiling point nitrogen. Many cold test are cooled with nitrogen. 
+This means testing close to or lower than this boiling temperature is a lot more difficult. 
+
+## Thermal Control Objectives
+Why spacecraft thermal control, analysis and engineering?
 
 - Equipment is only functional in certain temperature ranges. Batteries can lose their charge if they get to cold, or explode if they overheat. The fuel in propulsion systems or the fluids in thermal systems can freeze. 
 - Control over temperature gradients is important as temperature gradients introduce deformation. For example for an optical system this can influence the measurements. This can also introduce stresses in the structure, specially at bonded interfaces.
 - Temperature swings can cause fatigue in the materials. 
 - At the extreme ranges temperatures can cause changes in material properties, e.g. outgassing of adhesives, or brittleness at cryogenic temperatures.
+- Certain temperatures might be needed for certain performance. Solar cells are more efficient at lower temperatures, sensors measure less noise at lower temperatures and a 3D printer needs to heat materials to melting point. 
 
-The numbers below form some indication of a characteristic thermal control subsystem for a spacecraft. These number can very per application:
-- Appearance: > 95 % spacecraft exterior
-- Mass: 2 - 5 % of spacecraft dry mass
-- Cost: 3 - 5 % of spacecraft cost
-- Power: < 5 % of total spacecraft power
-
-
-Typical elements of the thermal subsystem are:
-- Surface coatings and finishes
-- Multilayer insulations and heat shield / barriers
-- Radiators
-- Mounting materials (struts)
-- Interface fillers, noth insulating and conducting
-- Passive coolers
-- Flexible conductive links
-- Heat pipes, both passive (contact conductance) and actively pumped.
-- Temperature sensors
-- Heaters and thermostats
-- Active coolers (e.g. Peltier elements or cryostats)
-- Louvers
-- Phase change materials
-
-### Heat tranfer
-
-Heat transfer deals with the transfer of the thermal energy between the environment and the space craft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:
-```{glossary}
-Radiation
-  Heat transfer by electromagnetic radiation, No medium is required for this heat transfer, Most important heat transfer mechanism in space
-
-Conduction
-  Heat transfer by molecular interaction, Heat transfer through parts and contact points, Locally important and essential
-
-Convection:
-	Heat transfer by gas or fluid movement.Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight.
-	Can be natural or forced (e.g. by a fan). Works different in space and in a gravity environment. 
-```
+## Thermal Control Requirements
+These needs lead to a number of typical thermal requirements onto the thermal subsystem:
+- Temperature range, both for operations and qualification:
+These requirements are defined to keep system in their survival or operational range. This is to secure the integrity of materials, an optimal functioning of parts and to keep parts within their tested range. 
+- Temperature gradients and uniformity
+These requirements are defined to keep a temperature uniform over a certain area. This is important for alignment of parts and internal stresses. Sometimes these requirements are defined to make sure any part of a system is within a small range from the point where the temperature is measured. 
+- Temperature stability
+These requirements are defined to keep temperatures uniform over time. This is important for sensors for example, and ensures measurements are taken in similar conditions. 
+- Interface heat flux and flows
+Interface requirements are defined to help the systems design
+Other requirements onto the thermal system often include:
+- The thermal environment
+- Electrical power and other consumables (e.g. coolant that boils off. )
+- TM/TC allocation
+- Mass
+- Limits on optical properties for a system
+The amount of systems requirements depend on wether an active or a passive system is required. An active system needs power and communications from the satellite bus. A passive system will always work. 
+The thermal environment will both define on-ground conditions and orbital conditions. More on this topic in the next chapter. 
 
 
-Thermal design and analysis is involved in all phases of spacecraft design:
-- In feasibility phases, the thermal environment is analyzed, rough thermal concepts are compared. Preliminary analysis is performed. In this phase general concept is selected, often with high level (hand) calculations.
-- In the preliminary design phase, the preliminary thermal design is defined, and thermal models are developed. The analysis focusses on the worst cases (hot and cold). Some development tests can occur, for which analysis and correlation between test and model needs to be performed. 
-- In the detailed design phase, the final Thermal control subsystem design in analyzed. The models are updated, and all mission cases are analyzed. 
-- During the qualification the thermal models are adapted for testing. Test predictions and correlations are being made. The thermal models will be updated after these tests. Often the thermal engineer also supports AIT activities with their expertise. At the end of this phase, models and documentation needs to be archived for future use.
-- During the utilization phase, mission predictions and flight correlations are performed.
-
-The thermal modelling process starts with the mission requirements (environment, orbit operational requirements) and an spacecraft design (geometry, thermos-optical properties, materials, operation). 
-From this information a geometric (radiative) model and a thermal model are made. 
-A radiative solver will calculate the radiative load and interactions in the spacecraft model. 
-The thermal model represents the conductive couplings, heater settings, heat capacity, heater settings etc.. These two models, are combined in the main thermal mode, which is solved for temperatures, heat fluxes, heater cycles. 
-And thermos-hydraulic parameters. The results are validated.
-For hand calculations a roughly similar process is followed. This is an iterative process, as design changes warrant changes to the model. 

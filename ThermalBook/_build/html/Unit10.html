@@ -358,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -374,6 +376,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spacecraft-design">10.1. Spacecraft Design</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -385,6 +395,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thermal-design-cycle">
 <h1><span class="section-number">10. </span>Thermal Design Cycle<a class="headerlink" href="#thermal-design-cycle" title="Permalink to this heading">#</a></h1>
+<section id="spacecraft-design">
+<h2><span class="section-number">10.1. </span>Spacecraft Design<a class="headerlink" href="#spacecraft-design" title="Permalink to this heading">#</a></h2>
+<p>Thermal design and analysis is involved in all phases of spacecraft design:</p>
+<ul class="simple">
+<li><p>In feasibility phases, the thermal environment is analyzed, rough thermal concepts are compared. Preliminary analysis is performed. In this phase general concept is selected, often with high level (hand) calculations.</p></li>
+<li><p>In the preliminary design phase, the preliminary thermal design is defined, and thermal models are developed. The analysis focusses on the worst cases (hot and cold). Some development tests can occur, for which analysis and correlation between test and model needs to be performed.</p></li>
+<li><p>In the detailed design phase, the final Thermal control subsystem design in analyzed. The models are updated, and all mission cases are analyzed.</p></li>
+<li><p>During the qualification the thermal models are adapted for testing. Test predictions and correlations are being made. The thermal models will be updated after these tests. Often the thermal engineer also supports AIT activities with their expertise. At the end of this phase, models and documentation needs to be archived for future use.</p></li>
+<li><p>During the utilization phase, mission predictions and flight correlations are performed.</p></li>
+</ul>
+<p>The thermal modelling process starts with the mission requirements (environment, orbit operational requirements) and an spacecraft design (geometry, thermos-optical properties, materials, operation).
+From this information a geometric (radiative) model and a thermal model are made.
+A radiative solver will calculate the radiative load and interactions in the spacecraft model.
+The thermal model represents the conductive couplings, heater settings, heat capacity, heater settings etc.. These two models, are combined in the main thermal mode, which is solved for temperatures, heat fluxes, heater cycles.
+And thermos-hydraulic parameters. The results are validated.
+For hand calculations a roughly similar process is followed. This is an iterative process, as design changes warrant changes to the model.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,7 +469,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spacecraft-design">10.1. Spacecraft Design</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

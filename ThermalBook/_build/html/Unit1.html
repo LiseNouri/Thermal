@@ -381,11 +381,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">1.1. Key Concepts:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-spacecraft-thermal-control">1.1.1. Why spacecraft thermal control?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-tranfer">1.1.2. Heat tranfer</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-heat-tranfer">1.1. Types of Heat tranfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flux-heat-flow-and-heat-transfer">1.2. Heat Flux, Heat flow and Heat Transfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-ranges">1.3. Temperature ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-control-objectives">1.4. Thermal Control Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-control-requirements">1.5. Thermal Control Requirements</a></li>
 </ul>
             </nav>
         </div>
@@ -399,68 +399,75 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="background-theory-and-key-concepts">
 <h1><span class="section-number">1. </span>Background Theory and Key Concepts<a class="headerlink" href="#background-theory-and-key-concepts" title="Permalink to this heading">#</a></h1>
-<section id="key-concepts">
-<h2><span class="section-number">1.1. </span>Key Concepts:<a class="headerlink" href="#key-concepts" title="Permalink to this heading">#</a></h2>
-<p>This part of the lectures introduces some key concepts, and introduces a global overview of the thermal subsystem. More detail will be provided in subsequent lectures.</p>
-<section id="why-spacecraft-thermal-control">
-<h3><span class="section-number">1.1.1. </span>Why spacecraft thermal control?<a class="headerlink" href="#why-spacecraft-thermal-control" title="Permalink to this heading">#</a></h3>
+<p>This chapter will introduce some background theory and key concepts needed for thermal engineering.</p>
+<section id="types-of-heat-tranfer">
+<h2><span class="section-number">1.1. </span>Types of Heat tranfer<a class="headerlink" href="#types-of-heat-tranfer" title="Permalink to this heading">#</a></h2>
+<p>Heat transfer deals with the transfer of the thermal energy between the environment and the spacecraft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:</p>
+<dl class="glossary simple">
+<dt id="term-Radiation">Radiation<a class="headerlink" href="#term-Radiation" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by electromagnetic radiation. No medium is required for this heat transfer. Heat is transported from one surface to another.
+This is also how the external fluxes from sun and planets transfer heat. This is the most important heat transfer mechanism in space.</p>
+</dd>
+<dt id="term-Conduction">Conduction<a class="headerlink" href="#term-Conduction" title="Permalink to this term">#</a></dt><dd><p>Conduction is the heat transfer by molecular interaction. This is heat transfer through parts and contact points.
+Locally this is important and essential within your system.</p>
+</dd>
+<dt id="term-Convection">Convection:<a class="headerlink" href="#term-Convection" title="Permalink to this term">#</a></dt><dd><p>Convection is the heat transfer by gas or fluid movement.
+This is absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight).
+Convection can be natural or forced (e.g. by a fan). Note that convection works different in space and in a gravity environment. Convection occurs due to a combination of temperature and density differences in the fluid, and body forces such as gravity. In a gravity environment hot fluids rise up as it is lighter than the surrounding fluids.</p>
+</dd>
+</dl>
+</section>
+<section id="heat-flux-heat-flow-and-heat-transfer">
+<h2><span class="section-number">1.2. </span>Heat Flux, Heat flow and Heat Transfer<a class="headerlink" href="#heat-flux-heat-flow-and-heat-transfer" title="Permalink to this heading">#</a></h2>
+<p>Heat transfer and heat flow is the transfer of thermal energy (heat) per unit time.
+This is denoted with the symbol a capital Q. This is a scaler and expressed in Watt (W=J/s).</p>
+<p>Heat Flux is the transfer of thermal energy (heat) per unit time per unit area.
+This is denoted with a Φ. The heat flux is a vector and expressed in W/m2 (=J/s/m2)</p>
+</section>
+<section id="temperature-ranges">
+<h2><span class="section-number">1.3. </span>Temperature ranges<a class="headerlink" href="#temperature-ranges" title="Permalink to this heading">#</a></h2>
+<p>During your time as thermal engineer you will encounter references to specific temperature ranges.
+The exact definition can differ but in general:</p>
+<ul class="simple">
+<li><p>The High temperature range considers temperature above 470K.</p></li>
+<li><p>The cryogenic temperature range considers temperatures below 200K.
+Two other important temperatures to remember:</p></li>
+<li><p>273.15 K = 0 °C : Useful for conversion between Kelvin and Celsius. Both are used in thermal engineering.</p></li>
+<li><p>77 K  = -196 °C: Boiling point nitrogen. Many cold test are cooled with nitrogen.
+This means testing close to or lower than this boiling temperature is a lot more difficult.</p></li>
+</ul>
+</section>
+<section id="thermal-control-objectives">
+<h2><span class="section-number">1.4. </span>Thermal Control Objectives<a class="headerlink" href="#thermal-control-objectives" title="Permalink to this heading">#</a></h2>
+<p>Why spacecraft thermal control, analysis and engineering?</p>
 <ul class="simple">
 <li><p>Equipment is only functional in certain temperature ranges. Batteries can lose their charge if they get to cold, or explode if they overheat. The fuel in propulsion systems or the fluids in thermal systems can freeze.</p></li>
 <li><p>Control over temperature gradients is important as temperature gradients introduce deformation. For example for an optical system this can influence the measurements. This can also introduce stresses in the structure, specially at bonded interfaces.</p></li>
 <li><p>Temperature swings can cause fatigue in the materials.</p></li>
 <li><p>At the extreme ranges temperatures can cause changes in material properties, e.g. outgassing of adhesives, or brittleness at cryogenic temperatures.</p></li>
-</ul>
-<p>The numbers below form some indication of a characteristic thermal control subsystem for a spacecraft. These number can very per application:</p>
-<ul class="simple">
-<li><p>Appearance: &gt; 95 % spacecraft exterior</p></li>
-<li><p>Mass: 2 - 5 % of spacecraft dry mass</p></li>
-<li><p>Cost: 3 - 5 % of spacecraft cost</p></li>
-<li><p>Power: &lt; 5 % of total spacecraft power</p></li>
-</ul>
-<p>Typical elements of the thermal subsystem are:</p>
-<ul class="simple">
-<li><p>Surface coatings and finishes</p></li>
-<li><p>Multilayer insulations and heat shield / barriers</p></li>
-<li><p>Radiators</p></li>
-<li><p>Mounting materials (struts)</p></li>
-<li><p>Interface fillers, noth insulating and conducting</p></li>
-<li><p>Passive coolers</p></li>
-<li><p>Flexible conductive links</p></li>
-<li><p>Heat pipes, both passive (contact conductance) and actively pumped.</p></li>
-<li><p>Temperature sensors</p></li>
-<li><p>Heaters and thermostats</p></li>
-<li><p>Active coolers (e.g. Peltier elements or cryostats)</p></li>
-<li><p>Louvers</p></li>
-<li><p>Phase change materials</p></li>
+<li><p>Certain temperatures might be needed for certain performance. Solar cells are more efficient at lower temperatures, sensors measure less noise at lower temperatures and a 3D printer needs to heat materials to melting point.</p></li>
 </ul>
 </section>
-<section id="heat-tranfer">
-<h3><span class="section-number">1.1.2. </span>Heat tranfer<a class="headerlink" href="#heat-tranfer" title="Permalink to this heading">#</a></h3>
-<p>Heat transfer deals with the transfer of the thermal energy between the environment and the space craft and between spacecraft elements. It is either expressed as a heat flow (Q in Watt) or as a flux (q in W/m2). Three mechanisms of heat transfer:</p>
-<dl class="glossary simple">
-<dt id="term-Radiation">Radiation<a class="headerlink" href="#term-Radiation" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by electromagnetic radiation, No medium is required for this heat transfer, Most important heat transfer mechanism in space</p>
-</dd>
-<dt id="term-Conduction">Conduction<a class="headerlink" href="#term-Conduction" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by molecular interaction, Heat transfer through parts and contact points, Locally important and essential</p>
-</dd>
-<dt id="term-Convection">Convection:<a class="headerlink" href="#term-Convection" title="Permalink to this term">#</a></dt><dd><p>Heat transfer by gas or fluid movement.Absent in the space environment, but can play a role in thermal control or subsystems of spacecraft (e.g. fuel systems, heat pipes, human spaceflight.
-Can be natural or forced (e.g. by a fan). Works different in space and in a gravity environment.</p>
-</dd>
-</dl>
-<p>Thermal design and analysis is involved in all phases of spacecraft design:</p>
+<section id="thermal-control-requirements">
+<h2><span class="section-number">1.5. </span>Thermal Control Requirements<a class="headerlink" href="#thermal-control-requirements" title="Permalink to this heading">#</a></h2>
+<p>These needs lead to a number of typical thermal requirements onto the thermal subsystem:</p>
 <ul class="simple">
-<li><p>In feasibility phases, the thermal environment is analyzed, rough thermal concepts are compared. Preliminary analysis is performed. In this phase general concept is selected, often with high level (hand) calculations.</p></li>
-<li><p>In the preliminary design phase, the preliminary thermal design is defined, and thermal models are developed. The analysis focusses on the worst cases (hot and cold). Some development tests can occur, for which analysis and correlation between test and model needs to be performed.</p></li>
-<li><p>In the detailed design phase, the final Thermal control subsystem design in analyzed. The models are updated, and all mission cases are analyzed.</p></li>
-<li><p>During the qualification the thermal models are adapted for testing. Test predictions and correlations are being made. The thermal models will be updated after these tests. Often the thermal engineer also supports AIT activities with their expertise. At the end of this phase, models and documentation needs to be archived for future use.</p></li>
-<li><p>During the utilization phase, mission predictions and flight correlations are performed.</p></li>
+<li><p>Temperature range, both for operations and qualification:
+These requirements are defined to keep system in their survival or operational range. This is to secure the integrity of materials, an optimal functioning of parts and to keep parts within their tested range.</p></li>
+<li><p>Temperature gradients and uniformity
+These requirements are defined to keep a temperature uniform over a certain area. This is important for alignment of parts and internal stresses. Sometimes these requirements are defined to make sure any part of a system is within a small range from the point where the temperature is measured.</p></li>
+<li><p>Temperature stability
+These requirements are defined to keep temperatures uniform over time. This is important for sensors for example, and ensures measurements are taken in similar conditions.</p></li>
+<li><p>Interface heat flux and flows
+Interface requirements are defined to help the systems design
+Other requirements onto the thermal system often include:</p></li>
+<li><p>The thermal environment</p></li>
+<li><p>Electrical power and other consumables (e.g. coolant that boils off. )</p></li>
+<li><p>TM/TC allocation</p></li>
+<li><p>Mass</p></li>
+<li><p>Limits on optical properties for a system
+The amount of systems requirements depend on wether an active or a passive system is required. An active system needs power and communications from the satellite bus. A passive system will always work.
+The thermal environment will both define on-ground conditions and orbital conditions. More on this topic in the next chapter.</p></li>
 </ul>
-<p>The thermal modelling process starts with the mission requirements (environment, orbit operational requirements) and an spacecraft design (geometry, thermos-optical properties, materials, operation).
-From this information a geometric (radiative) model and a thermal model are made.
-A radiative solver will calculate the radiative load and interactions in the spacecraft model.
-The thermal model represents the conductive couplings, heater settings, heat capacity, heater settings etc.. These two models, are combined in the main thermal mode, which is solved for temperatures, heat fluxes, heater cycles.
-And thermos-hydraulic parameters. The results are validated.
-For hand calculations a roughly similar process is followed. This is an iterative process, as design changes warrant changes to the model.</p>
-</section>
 </section>
 </section>
 
@@ -528,11 +535,11 @@ For hand calculations a roughly similar process is followed. This is an iterativ
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">1.1. Key Concepts:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-spacecraft-thermal-control">1.1.1. Why spacecraft thermal control?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-tranfer">1.1.2. Heat tranfer</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-heat-tranfer">1.1. Types of Heat tranfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flux-heat-flow-and-heat-transfer">1.2. Heat Flux, Heat flow and Heat Transfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-ranges">1.3. Temperature ranges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-control-objectives">1.4. Thermal Control Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-control-requirements">1.5. Thermal Control Requirements</a></li>
 </ul>
   </nav></div>
 
