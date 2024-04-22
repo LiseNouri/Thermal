@@ -18,13 +18,13 @@ A perfect body emits and absorbs the maximum amount of radiation at all waveleng
 The spectral of a black body at a given wavelength and temperature can be described by Planck’s law:
 
 $$
-\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^2} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1}
+\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1} [$W\.m /s^2$]
 
 $$(PlanckLaw)
 
 Where:
-* $\lambda$ = wavelength
-* T = absolute temperature
+* $\lambda$ = wavelength [m]
+* T = absolute temperature [K]
 * k = Boltzmann’s constant = $1.4\cdot 10^{-23} kg \cdot m^2/s^2/K$
 * h = Planck’s constant = $6.6\cdot 10^{-34} kg \cdot m^2/s$
 * c = velocity of light in vacuum = $3 \cdot 10^{8} m/s$
