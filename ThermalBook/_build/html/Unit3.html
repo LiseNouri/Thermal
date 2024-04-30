@@ -403,7 +403,7 @@ document.write(`
 The spectral of a black body at a given wavelength and temperature can be described by Planck’s law:</p>
 <div class="math notranslate nohighlight" id="equation-plancklaw">
 <span class="eqno">(3.1)<a class="headerlink" href="#equation-plancklaw" title="Permalink to this equation">#</a></span>\[
-\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1} [$W\.m /s^2$]\]</div>
+\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1} [W \cdot m /s^2]\]</div>
 <p>Where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lambda\)</span> = wavelength [m]</p></li>
@@ -477,7 +477,8 @@ This effect is described by Wien’s displacement law:</p>
 <div class="math notranslate nohighlight" id="equation-wienlaw">
 <span class="eqno">(3.3)<a class="headerlink" href="#equation-wienlaw" title="Permalink to this equation">#</a></span>\[
 \lambda_{max}\, T \approx 2898 [\mu m \, K]\]</div>
-<p>Using Wien’s displacement law, it is possible to determine the peak radiation point of any black body.</p>
+<p>Using Wien’s displacement law, it is possible to determine the peak radiation point of any black body.
+For instance in the table bellow shows the peak radiation point of the Sun, boiling water and earth.</p>
 <table class="table" id="wienlawtable">
 <caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Wien’s Law</span><a class="headerlink" href="#wienlawtable" title="Permalink to this table">#</a></caption>
 <colgroup>
@@ -506,6 +507,73 @@ This effect is described by Wien’s displacement law:</p>
 </tr>
 </tbody>
 </table>
+<p>Another way of looking at it is via a graph compares the black body radiation of the Sun, boiling water and earth. The top two graphs show the absolute values with at different scales for the Y-axis, the bottom graph shows the data normalized to the maximum value of each dataset. The grey vertical bar shows the wavelengths of visible light.
+A few things to note:</p>
+<ul class="simple">
+<li><p>The wavelength of maximum radiation of the sun is at a much lower wavelength than those of boiling water and Earth.</p></li>
+<li><p>The peak of solar radiation is in the visible spectrum, while the other peaks are in the infrared spectrum.</p></li>
+<li><p>The majority of black body radiation energy of sunlight occurs below 0.2 and 3 m, while the majority of the radiation of boiling water and earth occur above 3 m.</p></li>
+</ul>
+<figure class="align-default" id="wienlaw">
+<a class="reference internal image-reference" href="_images/WienLaw.png"><img alt="_images/WienLaw.png" src="_images/WienLaw.png" style="height: 500px;" /></a>
+</figure>
+<p>As visualised by the data in figure XXX, radiation by the sun can be considered separate from any other lower temperature black body radiation.
+The major part of energy of solar radiation is between 0.2 and 3.0 micro m, while the major part of IR radiation is between 1 and 35 micro m.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span> 
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792458e+8</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.380649e-23</span> 
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">planck</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">wav</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">wav</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+	<span class="n">lambdamax</span> <span class="o">=</span> <span class="mi">2898</span><span class="o">/</span><span class="n">T</span>
+	<span class="n">maxintensity</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">lambdamax</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">intensity</span>
+	<span class="k">return</span> <span class="n">maxintensity</span>
+
+<span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">3e-6</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
+
+<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5788</span><span class="p">,</span> <span class="mi">372</span><span class="p">,</span> <span class="mi">252</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">planck</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span><span class="o">*</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span><span class="o">/</span><span class="n">maxintensity</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity (W/m^3)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Planck&#39;s Law&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">17</span>
+    <span class="n">lambdamax</span> <span class="o">=</span> <span class="mi">2898</span><span class="o">/</span><span class="n">T</span>
+                      <span class="o">^</span>
+<span class="ne">TabError</span>: inconsistent use of tabs and spaces in indentation
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

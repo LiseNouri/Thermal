@@ -18,7 +18,7 @@ A perfect body emits and absorbs the maximum amount of radiation at all waveleng
 The spectral of a black body at a given wavelength and temperature can be described by Planck’s law:
 
 $$
-\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1} [$W\.m /s^2$]
+\Phi_b(\lambda, T)=\frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h\cdot c}{k\cdot T \lambda}}-1} [W \cdot m /s^2]
 
 $$(PlanckLaw)
 
@@ -92,7 +92,7 @@ $$
 $$(WienLaw)
 
 Using Wien’s displacement law, it is possible to determine the peak radiation point of any black body. 
-
+For instance in the table bellow shows the peak radiation point of the Sun, boiling water and earth. 
 ```{list-table} Wien's Law
 :header-rows: 1
 :name: WienLawTable
@@ -109,4 +109,61 @@ Using Wien’s displacement law, it is possible to determine the peak radiation 
   - 0.5 $\mu m$
   - 7.8 $\mu m$
   - 11.5 $\mu m$
+```
+
+Another way of looking at it is via a graph compares the black body radiation of the Sun, boiling water and earth. The top two graphs show the absolute values with at different scales for the Y-axis, the bottom graph shows the data normalized to the maximum value of each dataset. The grey vertical bar shows the wavelengths of visible light.
+A few things to note:
+ * The wavelength of maximum radiation of the sun is at a much lower wavelength than those of boiling water and Earth. 
+ * The peak of solar radiation is in the visible spectrum, while the other peaks are in the infrared spectrum. 
+ * The majority of black body radiation energy of sunlight occurs below 0.2 and 3 m, while the majority of the radiation of boiling water and earth occur above 3 m. 
+
+
+
+```{figure} images/WienLaw.png
+:height: 500px
+:name: WienLaw
+
+```
+As visualised by the data in figure XXX, radiation by the sun can be considered separate from any other lower temperature black body radiation. 
+The major part of energy of solar radiation is between 0.2 and 3.0 micro m, while the major part of IR radiation is between 1 and 35 micro m. 
+
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+from matplotlib import pyplot as plt 
+import numpy as np
+import warnings
+
+h = 6.62607015e-34 
+c = 2.99792458e+8
+k = 1.380649e-23 
+pi = np.pi
+
+warnings.filterwarnings('ignore')
+
+
+def planck(wav, T):
+    a = 2.0*pi*h*c**2
+    b = h*c/(wav*k*T)
+    intensity = a/((wav**5)*(np.exp(b)-1.0))
+	lambdamax = 2898/T
+	maxintensity = a/((lambdamax**5)*(np.exp(b)-1.0))
+    return intensity
+	return maxintensity
+
+wavelengths = np.arange(1e-9, 3e-6, 1e-9)
+
+temperatures = [5788, 372, 252]
+
+for T in temperatures:
+    intensity = planck(wavelengths, T)
+    plt.plot(wavelengths*1e9, intensity*1e-12, label=f"T={T}K")
+	plt.plot(wavelengths*1e9, intensity/maxintensity, label=f"T={T}K")
+
+plt.xlabel("Wavelength (nm)")
+plt.ylabel("Intensity (W/m^3)")
+plt.title("Planck's Law")
+plt.legend()
+plt.show()
 ```
