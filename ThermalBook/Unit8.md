@@ -1,5 +1,7 @@
 # Thermal Verification and Testing
 
+
+
 ## Thermal Tests
  
 ###Thermal Cycle Tests
@@ -19,6 +21,24 @@ tive heat transfer, this test is the most realistic ground simulation of the fli
 ronment. Therefore its primary purpose is performance verification through 
 functional testing. Temperature transition is slower than in the thermal cycling 
 test, so stress screening is of secondary importance. 
+
+#### Thermal Management Hardware
+In general 25% of margin is used. This means that the heater should be oversized to 25%. Temperature margin of 11 degrees for passive methods. 
+This value comes from the Spacecraft thermal control handbook reference. 
+
+- Pasive 
+- Active
+
+3 types of TV temperature sensors: 
+
+Thermocouples, uses two wires to produce a voltage relative to the temperature present in the junction between them. 
+Temperature range is 200 to 1750 degrees
+Accuracy (needs calibration) can be 0.5 to 5 degree 
+Resistance Temperature Detector(RTD)
+Very slow, the typical response time is 1 to 50 seconds. 
+
+Thermistor. Mostly used in flight.
+
 
 
 ### Thermal Balance Test
