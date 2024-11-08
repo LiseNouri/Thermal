@@ -135,35 +135,38 @@ from matplotlib import pyplot as plt
 import numpy as np
 import warnings
 
-h = 6.62607015e-34 
-c = 2.99792458e+8
-k = 1.380649e-23 
+# Physical constants
+h = 6.62607015e-34  # Planck's constant (J·s)
+c = 2.99792458e+8  # Speed of light (m/s)
+k = 1.380649e-23  # Boltzmann's constant (J/K)
 pi = np.pi
 
+# Ignore overflow warnings
 warnings.filterwarnings('ignore')
 
-
+# Planck function
 def planck(wav, T):
-    a = 2.0*pi*h*c**2
-    b = h*c/(wav*k*T)
-    intensity = a/((wav**5)*(np.exp(b)-1.0))
-	lambdamax = 2898/T
-	maxintensity = a/((lambdamax**5)*(np.exp(b)-1.0))
+    a = 2.0 * pi * h * c**2
+    b = h * c / (wav * k * T)
+    intensity = a / ((wav**5) * (np.exp(b) - 1.0))
     return intensity
-	return maxintensity
 
-wavelengths = np.arange(1e-9, 3e-6, 1e-9)
+# Wavelengths and temperatures
+wavelengths = np.arange(1e-9, 2e-9, 1e-9)  # Wavelength range (meters)
+temperatures = [5788, 372, 252]  # Example temperatures in Kelvin
 
-temperatures = [5788, 372, 252]
+# Calculate intensities and find the maximum value
+intensities = [planck(wavelengths, T) for T in temperatures]
+maxintensity = max([np.max(intensity) for intensity in intensities])
 
+# Plot each normalized intensity curve
 for T in temperatures:
     intensity = planck(wavelengths, T)
-    plt.plot(wavelengths*1e9, intensity*1e-12, label=f"T={T}K")
-	plt.plot(wavelengths*1e9, intensity/maxintensity, label=f"T={T}K")
+    plt.plot(wavelengths * 1e9, intensity / maxintensity, label=f"T={T}K")
 
+# Graph labels and legend
 plt.xlabel("Wavelength (nm)")
-plt.ylabel("Intensity (W/m^3)")
+plt.ylabel("Intensity/MaxIntensity (-)")
 plt.title("Planck's Law")
 plt.legend()
 plt.show()
-```
