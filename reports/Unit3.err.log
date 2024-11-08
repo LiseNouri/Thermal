@@ -34,31 +34,41 @@ def planck(wav, T):
     a = 2.0*pi*h*c**2
     b = h*c/(wav*k*T)
     intensity = a/((wav**5)*(np.exp(b)-1.0))
-	lambdamax = 2898/T
-	maxintensity = a/((lambdamax**5)*(np.exp(b)-1.0))
     return intensity
-	return maxintensity
+
+
 
 wavelengths = np.arange(1e-9, 3e-6, 1e-9)
 
 temperatures = [5788, 372, 252]
+intensities = []
 
 for T in temperatures:
     intensity = planck(wavelengths, T)
-    plt.plot(wavelengths*1e9, intensity*1e-12, label=f"T={T}K")
-	plt.plot(wavelengths*1e9, intensity/maxintensity, label=f"T={T}K")
+    intensities.append(intensity)
+
+maxintesity = max(intensities)
+
+for T in temperatures:
+    intensity = planck(wavelengths, T)
+    plt.plot(wavelengths*1e9, intensity/maxintensity, label=f"T={T}K")
 
 plt.xlabel("Wavelength (nm)")
-plt.ylabel("Intensity (W/m^3)")
+plt.ylabel("Intensity/MaxIntensity (-)")
 plt.title("Planck's Law")
 plt.legend()
 plt.show()
 ------------------
 
 
-[1;36m  File [1;32m<string>:17[1;36m[0m
-[1;33m    lambdamax = 2898/T[0m
-[1;37m                      ^[0m
-[1;31mTabError[0m[1;31m:[0m inconsistent use of tabs and spaces in indentation
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+Cell [1;32mIn[2], line 30[0m
+[0;32m     27[0m     intensity [38;5;241m=[39m planck(wavelengths, T)
+[0;32m     28[0m     intensities[38;5;241m.[39mappend(intensity)
+[1;32m---> 30[0m maxintesity [38;5;241m=[39m [38;5;28;43mmax[39;49m[43m([49m[43mintensities[49m[43m)[49m
+[0;32m     32[0m [38;5;28;01mfor[39;00m T [38;5;129;01min[39;00m temperatures:
+[0;32m     33[0m     intensity [38;5;241m=[39m planck(wavelengths, T)
 
+[1;31mValueError[0m: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 

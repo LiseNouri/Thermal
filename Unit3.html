@@ -530,34 +530,38 @@ The major part of energy of solar radiation is between 0.2 and 3.0 micro m, whil
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span> 
-<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792458e+8</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mf">1.380649e-23</span> 
+<span class="c1"># Physical constants</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># Planck&#39;s constant (J·s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792458e+8</span>  <span class="c1"># Speed of light (m/s)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.380649e-23</span>  <span class="c1"># Boltzmann&#39;s constant (J/K)</span>
 <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 
+<span class="c1"># Ignore overflow warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
-
+<span class="c1"># Planck function</span>
 <span class="k">def</span> <span class="nf">planck</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">wav</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">intensity</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">wav</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
-	<span class="n">lambdamax</span> <span class="o">=</span> <span class="mi">2898</span><span class="o">/</span><span class="n">T</span>
-	<span class="n">maxintensity</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">lambdamax</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">c</span> <span class="o">/</span> <span class="p">(</span><span class="n">wav</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">intensity</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="p">((</span><span class="n">wav</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">intensity</span>
-	<span class="k">return</span> <span class="n">maxintensity</span>
 
-<span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">3e-6</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
+<span class="c1"># Wavelengths and temperatures</span>
+<span class="n">wavelengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">2e-9</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>  <span class="c1"># Wavelength range (meters)</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5788</span><span class="p">,</span> <span class="mi">372</span><span class="p">,</span> <span class="mi">252</span><span class="p">]</span>  <span class="c1"># Example temperatures in Kelvin</span>
 
-<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5788</span><span class="p">,</span> <span class="mi">372</span><span class="p">,</span> <span class="mi">252</span><span class="p">]</span>
+<span class="c1"># Calculate intensities and find the maximum value</span>
+<span class="n">intensities</span> <span class="o">=</span> <span class="p">[</span><span class="n">planck</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">]</span>
+<span class="n">maxintensity</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">intensity</span><span class="p">)</span> <span class="k">for</span> <span class="n">intensity</span> <span class="ow">in</span> <span class="n">intensities</span><span class="p">])</span>
 
+<span class="c1"># Plot each normalized intensity curve</span>
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
     <span class="n">intensity</span> <span class="o">=</span> <span class="n">planck</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span><span class="o">*</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span><span class="o">/</span><span class="n">maxintensity</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">*</span> <span class="mf">1e9</span><span class="p">,</span> <span class="n">intensity</span> <span class="o">/</span> <span class="n">maxintensity</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">K&quot;</span><span class="p">)</span>
 
+<span class="c1"># Graph labels and legend</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity (W/m^3)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity/MaxIntensity (-)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Planck&#39;s Law&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -566,12 +570,7 @@ The major part of energy of solar radiation is between 0.2 and 3.0 micro m, whil
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">17</span>
-    <span class="n">lambdamax</span> <span class="o">=</span> <span class="mi">2898</span><span class="o">/</span><span class="n">T</span>
-                      <span class="o">^</span>
-<span class="ne">TabError</span>: inconsistent use of tabs and spaces in indentation
-</pre></div>
-</div>
+<img alt="_images/f4c09384f05f3ef98b4a63b406f448a7da14e0bd3f661139f88a7d4957fc7349.png" src="_images/f4c09384f05f3ef98b4a63b406f448a7da14e0bd3f661139f88a7d4957fc7349.png" />
 </div>
 </div>
 </section>
