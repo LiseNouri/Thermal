@@ -1,8 +1,20 @@
 # Background Theory and Key Concepts
 
-
-
 This chapter will introduce some background theory and key concepts needed for thermal engineering. 
+## Thermal Control Objectives
+
+Spacecraft operate in environments with extreme and variable temperatures, which can significantly impact system performance and reliability. The following points highlight why thermal control, analysis, and engineering are essential for a successful space mission:
+
+*Operational Temperature Ranges: Spacecraft equipment only functions properly within specific temperature limits. For example, batteries may lose charge if they become too cold or could overheat and explode. Similarly, propulsion system fuel or thermal system fluids can freeze if temperatures drop too low.
+
+*Temperature Gradients: Managing temperature differences across the spacecraft is also important. Uneven temperatures can cause deformation, which is especially critical in precision systems like optical instruments, as it can affect measurement accuracy. Additionally, temperature gradients can introduce mechanical stresses, particularly at bonded interfaces which can potentially lead to structural failure.
+
+*Material Fatigue: Repeated temperature swings can lead to material fatigue over time, compromising the integrity of spacecraft components.
+
+*Material Property Changes: Extreme temperatures can alter material properties. For instance, adhesives may outgas at high temperatures, and materials can become brittle under cryogenic conditions.
+
+*Performance-Dependent Temperatures: Certain systems require specific temperature conditions for optimal performance. For example, solar cells operate more efficiently at lower temperatures, sensors generate less noise when cooler, and a 3D printer must heat materials to their melting point to function properly.
+
 
 ## Types of Heat tranfer
 
